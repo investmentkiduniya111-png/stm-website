@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment Ki Duniya</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, serif;
+    letter-spacing: 0.5px;
+}
+
+section {
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#intro { display: flex; }
+
+section::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+section * {
+    position: relative;
+    z-index: 1;
+}
+
+.btn {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #00c896;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 0 3px 10px rgba(0,200,150,0.3);
+}
+.btn:hover { 
+    background: #00a67d;
+    box-shadow: 0 5px 15px rgba(0,200,150,0.5);
+}
+
+.back-btn { 
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+    background:#ffffff30;
+    box-shadow: 0 3px 10px rgba(255,255,255,0.2);
+}
+.home-btn { 
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    background:#ff7b54;
+    box-shadow: 0 3px 10px rgba(255,123,84,0.4);
+}
+
+.center-wrapper {
+    text-align: center;
+    width: 100%;
+}
+
+.contact-text {
+    color: white !important;
+    margin: 15px 0;
+    text-align: center;
+    font-family: Georgia, serif;
+}
+
+.top-nav {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+.top-nav .btn {
+    background: rgba(255,123,84,0.9);
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+.top-nav .btn:hover {
+    background: #ff7b54;
+    transform: scale(1.05);
+}
+
+.home-nav {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.home-nav .btn {
+    background: rgba(255,123,84,0.9);
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+.home-nav .btn:hover {
+    background: #ff7b54;
+    transform: scale(1.05);
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.card {
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    font-family: Georgia, serif;
+}
+.card:hover { transform: scale(1.05); }
+.card.active { background: #00c896; }
+
+.selected-box {
+    margin-top: 20px;
+    background: rgba(0,0,0,0.4);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Georgia, serif;
+}
+
+.list-box {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 700px;
+    text-align: left;
+    margin-top: 60px;
+}
+
+.calc-box {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 900px;
+    margin: 15px auto;
+    text-align: left;
+}
+.calc-box h3 {
+    text-align: center;
+    margin-top: 0;
+    color: #00c896;
+}
+.calc-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: end;
+}
+.calc-col {
+    flex: 1;
+    min-width: 150px;
+}
+.calc-box label {
+    display: block;
+    margin: 8px 0 5px 0;
+    font-size: 13px;
+    font-family: Georgia, serif;
+}
+.calc-box input, .calc-box select {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+.calc-result {
+    background: rgba(0,200,150,0.3);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 12px;
+    text-align: center;
+}
+.calc-result p {
+    margin: 3px 0;
+    font-size: 14px;
+    font-family: Georgia, serif;
+}
+
+.risk-meter {
+    background: rgba(255,255,255,0.15);
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 20px auto;
+    margin-top: 60px;
+}
+.risk-bar {
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to right, #00c896 0%, #ffcc00 50%, #ff4d4d 100%);
+    border-radius: 15px;
+    position: relative;
+    margin: 20px 0;
+}
+.risk-pointer {
+    position: absolute;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid white;
+    transition: left 0.5s;
+}
+.risk-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-family: Georgia, serif;
+}
+
+.risk-table {
+    width: 100%;
+    font-size: 11px;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.risk-table th {
+    padding: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0,200,150,0.3);
+    font-family: Georgia, serif;
+}
+.risk-table td {
+    padding: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    vertical-align: top;
+}
+
+.faq-container {
+    margin-top: 60px;
+}
+.faq-item {
+    background: rgba(255,255,255,0.15);
+    margin: 10px 0;
+    border-radius: 10px;
+    max-width: 700px;
+    text-align: left;
+}
+.faq-question {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Georgia, serif;
+}
+.faq-answer {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;
+}
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 15px;
+}
+
+.disclaimer {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 30px auto 10px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.popup-overlay.active {
+    display: flex;
+}
+.popup-box {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    border-radius: 20px;
+    padding: 25px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    border: 2px solid #00c896;
+    animation: popupSlide 0.3s ease-out;
+    position: relative;
+}
+@keyframes popupSlide {
+    from { transform: scale(0.8) translateY(-50px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+}
+.popup-header {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #00c896;
+    margin-bottom: 20px;
+    font-family: Georgia, serif;
+}
+.popup-content {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 12px;
+    margin: 15px 0;
+}
+.popup-label {
+    font-size: 12px;
+    color: #00c896;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-family: Georgia, serif;
+}
+.popup-value {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    word-break: break-word;
+    margin-bottom: 15px;
+}
+.popup-steps {
+    background: rgba(0,200,150,0.2);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.8;
+    text-align: left;
+    margin: 15px 0;
+}
+.popup-email-note {
+    background: rgba(255,123,84,0.3);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    text-align: center;
+    margin: 10px 0;
+    color: #ffcc00;
+    font-weight: bold;
+    font-family: Georgia, serif;
+}
+.popup-btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.popup-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Georgia, serif;
+    letter-spacing: 0.5px;
+}
+.popup-btn-copy {
+    background: #00c896;
+    color: white;
+    box-shadow: 0 3px 10px rgba(0,200,150,0.3);
+}
+.popup-btn-copy:hover {
+    background: #00a67d;
+}
+.popup-btn-close {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    box-shadow: 0 3px 10px rgba(255,255,255,0.2);
+}
+.popup-btn-close:hover {
+    background: rgba(255,255,255,0.3);
+}
+.popup-close-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    opacity: 0.7;
+}
+.popup-close-icon:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .top-nav {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+    .top-nav .btn, .home-nav .btn {
+        padding: 8px 15px;
+        font-size: 11px;
+    }
+    .home-nav {
+        margin-top: 60px;
+    }
+    .card {
+        width: 140px;
+        padding: 15px;
+        font-size: 13px;
+    }
+    .calc-col {
+        min-width: 100%;
+    }
+    .list-box, .risk-meter {
+        margin-top: 20px;
+    }
+    .risk-table {
+        font-size: 9px;
+    }
+}
+
+#intro { background-image:url("https://images.unsplash.com/photo-1579621970563-ebec7560ff3e"); }
+#home { background-image:url("https://images.unsplash.com/photo-1559526324-593bc073d938"); }
+#invest { background-image:url("https://images.unsplash.com/photo-1553729459-efe14ef6055d"); }
+#extraCapsPage { background-image:url("https://images.unsplash.com/photo-1551288049-bebda4e38f71"); }
+#largeMidPage { background-image:url("https://images.unsplash.com/photo-1554224155-6726b3ff858f"); }
+#multiCapPage { background-image:url("https://images.unsplash.com/photo-1526304640581-d334cdbbf45e"); }
+#flexiCapPage { background-image:url("https://images.unsplash.com/photo-1559526324-593bc073d938"); }
+#focusedPage { background-image:url("https://images.unsplash.com/photo-1551288049-bebda4e38f71"); }
+#largeCapPage { background-image:url("https://images.unsplash.com/photo-1526304640581-d334cdbbf45e"); }
+#midCapPage { background-image:url("https://images.unsplash.com/photo-1554224155-6726b3ff858f"); }
+#smallCapPage { background-image:url("https://images.unsplash.com/photo-1553729459-efe14ef6055d"); }
+#elssPage { background-image:url("https://images.unsplash.com/photo-1554224155-6726b3ff858f"); }
+#thematicPage { background-image:url("https://images.unsplash.com/photo-1526304640581-d334cdbbf45e"); }
+#valuePage { background-image:url("https://images.unsplash.com/photo-1551288049-bebda4e38f71"); }
+#dividendPage { background-image:url("https://images.unsplash.com/photo-1553729459-efe14ef6055d"); }
+#sectoralPage { background-image:url("https://images.unsplash.com/photo-1559526324-593bc073d938"); }
+#fofPage { background-image:url("https://images.unsplash.com/photo-1579621970563-ebec7560ff3e"); }
+#contraPage { background-image:url("https://images.unsplash.com/photo-1554224155-6726b3ff858f"); }
+#indexPage { background-image:url("https://images.unsplash.com/photo-1526304640581-d334cdbbf45e"); }
+#overseasPage { background-image:url("https://images.unsplash.com/photo-1551288049-bebda4e38f71"); }
+#riskPage { background-image:url("https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3"); }
+#faqPage { background-image:url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85"); }
+</style>
+
+<!-- EMAILJS SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(function(){
+   emailjs.init("5gV3IILh9LSNkYAdW");
+})();
+</script>
+
+</head>
+
+<body>
+
+<!-- INTRO -->
+<section id="intro">
+<div class="top-nav">
+    <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
+    <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
+</div>
+
+<h1>Why Should You Invest?</h1>
+
+<ul class="list-box">
+<li><b>First, to grow your money:</b><br>
+Money kept at home stays the same. But money invested in a bank FD, PPF, or Mutual Fund grows slowly with time just like a plant grows when you water it.</li>
+
+<li><b>Second, to reach your dreams:</b><br>
+Want a new cycle, laptop, or college in the future? Investment helps your savings become big enough for big dreams.</li>
+
+<li><b>Third, to be ready for emergencies:</b><br>
+Sometimes sudden problems come. If your money is invested safely, it can help you and your family in tough times.</li>
+</ul>
+
+<h2>And the best part?<br>You don't need lakhs to start.</h2>
+
+<p>Even ₹100 a month can become thousands in a few years that is the magic of investing early!</p>
+
+<p>So don't just save, invest!</p>
+<p><b>Invest today, for a brighter tomorrow!</b></p>
+
+<button class="btn" onclick="showPage('home')">Next</button>
+
+</section>
+
+<!-- HOME -->
+<section id="home">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+
+<div class="home-nav">
+    <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
+    <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
+</div>
+
+<h1>Grow Your Money, Secure Your Future</h1>
+
+<button class="btn" style="background:#ff7b54; font-size:16px; font-weight:bold; padding:15px 40px; margin:15px 0 25px 0; box-shadow:0 4px 15px rgba(255,123,84,0.4);" onclick="showPage('invest')">
+    💰 Invest Now
+</button>
+
+<div class="calc-box">
+  <h3>SIP Calculator</h3>
+  <div class="calc-row">
+    <div class="calc-col">
+      <label>Monthly ₹</label>
+      <input type="number" id="sipAmount" value="5000">
+    </div>
+    <div class="calc-col">
+      <label>Return %</label>
+      <input type="number" id="sipRate" value="12">
+    </div>
+    <div class="calc-col">
+      <label>Years</label>
+      <input type="number" id="sipYears" value="10">
+    </div>
+    <div class="calc-col">
+      <button class="btn" style="width:100%;margin-top:20px;" onclick="calculateSIP()">Calculate</button>
+    </div>
+  <div class="calc-result" id="sipResult" style="display:none;">
+    <p>Invested: <b id="investedAmt">₹0</b> | Returns: <b id="estReturns">₹0</b> | Total: <b id="totalValue">₹0</b></p>
+  </div>
+</div>
+
+<div class="calc-box">
+  <h3>Lumpsum Calculator</h3>
+  <div class="calc-row">
+    <div class="calc-col">
+      <label>Investment ₹</label>
+      <input type="number" id="lumpAmount" value="100000">
+    </div>
+    <div class="calc-col">
+      <label>Return %</label>
+      <input type="number" id="lumpRate" value="12">
+    </div>
+    <div class="calc-col">
+      <label>Years</label>
+      <input type="number" id="lumpYears" value="10">
+    </div>
+    <div class="calc-col">
+      <button class="btn" style="width:100%;margin-top:20px;" onclick="calculateLumpsum()">Calculate</button>
+    </div>
+  <div class="calc-result" id="lumpResult" style="display:none;">
+    <p>Invested: <b id="lumpInvested">₹0</b> | Returns: <b id="lumpReturns">₹0</b> | Total: <b id="lumpTotal">₹0</b></p>
+  </div>
+</div>
+
+<div class="calc-box">
+  <h3>SWP Calculator</h3>
+  <div class="calc-row">
+    <div class="calc-col">
+      <label>Total Investment ₹</label>
+      <input type="number" id="swpAmount" value="1000000">
+    </div>
+    <div class="calc-col">
+      <label>Withdrawal/Month ₹</label>
+      <input type="number" id="swpWithdraw" value="8000">
+    </div>
+    <div class="calc-col">
+      <label>Return %</label>
+      <input type="number" id="swpRate" value="8">
+    </div>
+    <div class="calc-col">
+      <label>Years</label>
+      <input type="number" id="swpYears" value="15">
+    </div>
+    <div class="calc-col">
+      <button class="btn" style="width:100%;margin-top:20px;" onclick="calculateSWP()">Calculate</button>
+    </div>
+  </div>
+  <div class="calc-result" id="swpResult" style="display:none;">
+    <p>Total Withdrawn: <b id="swpWithdrawn">₹0</b> | Final Value: <b id="swpFinal">₹0</b></p>
+  </div>
+</div>
+
+<div class="center-wrapper">
+  <h3 class="contact-text">Please contact to know more</h3>
+
+  <button class="btn" style="background:#ff7b54;" onclick="openContactForm()">Contact Now</button>
+</div>
+
+<div class="disclaimer">
+    <b>Disclaimer:</b> Mutual Fund investments are subject to market risks. Read all scheme related documents carefully before investing. Past performance is not indicative of future results. Please consult your financial advisor before making any investment decision.
+</div>
+
+</section>
+
+<!-- INVEST -->
+<section id="invest">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<div class="top-nav">
+    <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
+    <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
+</div>
+
+<h1>Select Category</h1>
+
+<div class="options">
+<div class="card" onclick="showPage('midCapPage')">Mid Cap</div>
+<div class="card" onclick="showPage('smallCapPage')">Small Cap</div>
+<div class="card" onclick="showPage('largeCapPage')">Large Cap</div>
+<div class="card" onclick="showPage('extraCapsPage')">For More Caps</div>
+</div>
+</section>
+
+<!-- RISK METER PAGE - WITH POPUP TABLE -->
+<section id="riskPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+
+<h1>Know Your Risk Profile</h1>
+
+<div class="risk-meter">
+    <h3>Select Your Risk Appetite</h3>
+    <div class="calc-row">
+        <div class="calc-col">
+            <label>Age</label>
+            <select id="riskAge">
+                <option value="18-30">18-30 Years</option>
+                <option value="31-45">31-45 Years</option>
+                <option value="46-60">46-60 Years</option>
+                <option value="60+">60+ Years</option>
+            </select>
+        </div>
+        <div class="calc-col">
+            <label>Investment Horizon</label>
+            <select id="riskHorizon">
+                <option value="1-3">1-3 Years</option>
+                <option value="3-5">3-5 Years</option>
+                <option value="5+">5+ Years</option>
+            </select>
+        </div>
+        <div class="calc-col">
+            <label>Risk Tolerance</label>
+            <select id="riskTolerance">
+                <option value="low">Conservative</option>
+                <option value="medium">Moderate</option>
+                <option value="high">Aggressive</option>
+            </select>
+        </div>
+    </div>
+    <button class="btn" style="width:100%;margin-top:15px;" onclick="calculateRisk()">Check My Risk Profile</button>
+
+    <div class="risk-bar" id="riskBar" style="display:none;">
+        <div class="risk-pointer" id="riskPointer"></div>
+    </div>
+    <div class="risk-labels" id="riskLabels" style="display:none;">
+        <span>Conservative</span>
+        <span>Moderate</span>
+        <span>Aggressive</span>
+    </div>
+
+    <div id="riskResult" style="margin-top:20px; display:none;">
+        <h3 id="riskTitle"></h3>
+        <p id="riskDesc"></p>
+
+        <div style="background:rgba(0,0,0,0.3);padding:15px;border-radius:12px;margin-top:20px;text-align:left;">
+            <h4 style="text-align:center;margin:0 0 15px 0;color:#00c896;">📊 Recommended Funds For You</h4>
+            <div id="recommendedFunds" style="font-size:13px;line-height:1.8;"></div>
+
+            <button class="btn" style="width:100%;margin-top:15px;background:#ff7b54;" onclick="openRiskTablePopup()">📋 View Full Comparison Table</button>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<!-- RISK TABLE POPUP -->
+<div class="popup-overlay" id="riskTablePopup">
+    <div class="popup-box" style="max-width:600px;">
+        <span class="popup-close-icon" onclick="closeRiskTablePopup()">&times;</span>
+        <div class="popup-header">📊 Complete Fund Comparison Table</div>
+
+        <div style="background:rgba(0,0,0,0.3);padding:15px;border-radius:12px;margin:15px 0;text-align:left;max-height:400px;overflow-y:auto;">
+            <table class="risk-table">
+                <tr style="background:rgba(0,200,150,0.3);position:sticky;top:0;">
+                    <th>Age Group</th>
+                    <th>🟢 Conservative</th>
+                    <th>🟡 Moderate</th>
+                    <th>🔴 Aggressive</th>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;">18-30</td>
+                    <td>Large Cap<br>Index Funds<br>Debt Funds<br>Liquid Funds</td>
+                    <td>Flexi Cap<br>Large & Mid Cap<br>Multi Cap<br>Focused Funds</td>
+                    <td>Small Cap<br>Mid Cap<br>Sectoral Funds<br>Thematic Funds<br>Contra Funds</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;">31-45</td>
+                    <td>Large Cap<br>Balanced Adv.<br>Debt Funds<br>Index Funds</td>
+                    <td>Flexi Cap<br>Large & Mid Cap<br>Focused Funds<br>Value Funds</td>
+                    <td>Mid Cap<br>Small Cap<br>Contra Funds<br>Thematic Funds</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;">46-60</td>
+                    <td>Large Cap<br>Debt Funds<br>Liquid Funds<br>Index Funds<br>Dividend Yield</td>
+                    <td>Balanced Adv.<br>Large & Mid Cap<br>Dividend Yield<br>Multi Cap</td>
+                    <td>Flexi Cap<br>Multi Cap<br>Value Funds<br>Large & Mid Cap</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;">60+</td>
+                    <td>Debt Funds<br>Liquid Funds<br>Large Cap<br>SWP Plans<br>Index Funds</td>
+                    <td>Balanced Adv.<br>Dividend Yield<br>Large Cap<br>Debt Funds</td>
+                    <td>Large & Mid Cap<br>Flexi Cap<br>Dividend Yield</td>
+                </tr>
+            </table>
+        </div>
+
+        <button class="popup-btn popup-btn-close" style="width:100%;" onclick="closeRiskTablePopup()">Close</button>
+    </div>
+</div><!-- FAQ PAGE -->
+<section id="faqPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+
+<h1>Frequently Asked Questions</h1>
+
+<div class="faq-container">
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>What is a Mutual Fund?</span>
+        <span>+</span>
+    </div>
+    <div class="faq-answer">
+        A mutual fund pools money from many investors to invest in stocks, bonds, or other securities. It is managed by professional fund managers who aim to grow your money based on the fund's objective.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>What is SIP?</span>
+        <span>+</span>
+    </div>
+    <div class="faq-answer">
+        SIP Systematic Investment Plan allows you to invest a fixed amount regularly in mutual funds. You can start with as low as ₹500 per month. It helps in rupee cost averaging and disciplined investing.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>Is my money safe in Mutual Funds?</span>
+        <span>+</span>
+    </div>
+    <div class="faq-answer">
+        Mutual funds are regulated by SEBI and are subject to market risks. While they do not guarantee returns, diversification and professional management help reduce risk. Choose funds based on your risk appetite.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>What is ELSS and its tax benefit?</span>
+        <span>+</span>
+    </div>
+    <div class="faq-answer">
+        ELSS Equity Linked Savings Scheme is a tax-saving mutual fund with 3-year lock-in. You can claim deduction up to ₹1.5 lakh under Section 80C of Income Tax Act. Returns above ₹1 lakh are taxed at 10% LTCG.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>How to withdraw money from Mutual Funds?</span>
+        <span>+</span>
+    </div>
+    <div class="faq-answer">
+        You can redeem units anytime for open-ended funds. Money is credited to your bank account within 1-3 working days. For ELSS, withdrawal is allowed only after 3 years lock-in period.
+    </div>
+</div>
+
+</section>
+
+<!-- EXTRA CAPS -->
+<section id="extraCapsPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+
+<h1>More Fund Categories</h1>
+
+<div class="options">
+<div class="card" onclick="showPage('largeMidPage')">Large & Mid Cap</div>
+<div class="card" onclick="showPage('multiCapPage')">Multi Cap</div>
+<div class="card" onclick="showPage('flexiCapPage')">Flexi Cap</div>
+<div class="card" onclick="showPage('focusedPage')">Focused Funds</div>
+<div class="card" onclick="showPage('elssPage')">ELSS</div>
+<div class="card" onclick="showPage('thematicPage')">Thematic Funds</div>
+<div class="card" onclick="showPage('valuePage')">Value Funds</div>
+<div class="card" onclick="showPage('dividendPage')">Dividend Yield Funds</div>
+<div class="card" onclick="showPage('sectoralPage')">Sectoral Funds</div>
+<div class="card" onclick="showPage('fofPage')">Domestic FoFs</div>
+<div class="card" onclick="showPage('contraPage')">Contra Funds</div>
+<div class="card" onclick="showPage('indexPage')">Index / ETFs</div>
+<div class="card" onclick="showPage('overseasPage')">Overseas FoFs</div>
+</div>
+</section>
+
+<!-- LARGE & MID CAP FUNDS -->
+<section id="largeMidPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Large & Mid Cap Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">Motilal Oswal Large and Midcap Fund</div>
+<div class="card" onclick="selectFund(this)">HSBC Large & Mid Cap Fund</div>
+<div class="card" onclick="selectFund(this)">Helios Large & Mid Cap Fund</div>
+<div class="card" onclick="selectFund(this)">SBI Large & Midcap Fund</div>
+<div class="card" onclick="selectFund(this)">Invesco India Large & Mid Cap Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- MULTI CAP FUNDS -->
+<section id="multiCapPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Multi Cap Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">Groww Multicap Fund</div>
+<div class="card" onclick="selectFund(this)">Bank of India Multi Cap Fund</div>
+<div class="card" onclick="selectFund(this)">Tata Multicap Fund</div>
+<div class="card" onclick="selectFund(this)">ITI Multi Cap Fund</div>
+<div class="card" onclick="selectFund(this)">Kotak Multicap Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- FLEXI CAP FUNDS -->
+<section id="flexiCapPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Flexi Cap Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">Bank of India Flexi Cap Fund</div>
+<div class="card" onclick="selectFund(this)">Navi Flexi Cap Fund</div>
+<div class="card" onclick="selectFund(this)">Bajaj Finserv Flexi Cap Fund</div>
+<div class="card" onclick="selectFund(this)">ICICI Pru Flexicap Fund</div>
+<div class="card" onclick="selectFund(this)">Aditya Birla SL Flexi Cap Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- FOCUSED FUNDS -->
+<section id="focusedPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Focused Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">Motilal Oswal Focused Fund</div>
+<div class="card" onclick="selectFund(this)">SBI Focused Fund</div>
+<div class="card" onclick="selectFund(this)">Kotak Focused Fund</div>
+<div class="card" onclick="selectFund(this)">ITI Focused Fund</div>
+<div class="card" onclick="selectFund(this)">Old Bridge Focused Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- LARGE CAP FUNDS -->
+<section id="largeCapPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Large Cap Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">Aditya Birla SL Large Cap Fund</div>
+<div class="card" onclick="selectFund(this)">Quant Large Cap Fund</div>
+<div class="card" onclick="selectFund(this)">Groww Large Cap Fund</div>
+<div class="card" onclick="selectFund(this)">Nippon India Large Cap Fund</div>
+<div class="card" onclick="selectFund(this)">SBI Large Cap Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- MID CAP FUNDS -->
+<section id="midCapPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Mid Cap Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">ICICI Pru MidCap Fund</div>
+<div class="card" onclick="selectFund(this)">HSBC Midcap Fund</div>
+<div class="card" onclick="selectFund(this)">WhiteOak Capital Mid Cap Fund</div>
+<div class="card" onclick="selectFund(this)">Kotak Midcap Fund</div>
+<div class="card" onclick="selectFund(this)">Helios Mid Cap Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- SMALL CAP FUNDS -->
+<section id="smallCapPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Small Cap Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">TRUSTMF Small Cap Fund</div>
+<div class="card" onclick="selectFund(this)">Union Small Cap Fund</div>
+<div class="card" onclick="selectFund(this)">DSP Small Cap Fund</div>
+<div class="card" onclick="selectFund(this)">Sundaram Small Cap Fund</div>
+<div class="card" onclick="selectFund(this)">Mirae Asset Small Cap Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- ELSS FUNDS -->
+<section id="elssPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>ELSS Tax Saver Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">Motilal Oswal ELSS Tax Saver Fund</div>
+<div class="card" onclick="selectFund(this)">Quant ELSS Tax Saver Fund</div>
+<div class="card" onclick="selectFund(this)">Bank of India ELSS Tax Saver</div>
+<div class="card" onclick="selectFund(this)">Aditya Birla SL ELSS Tax Saver Fund</div>
+<div class="card" onclick="selectFund(this)">Edelweiss ELSS Tax Saver Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- THEMATIC FUNDS -->
+<section id="thematicPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Thematic Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">SBI Automotive Oppo. Fund</div>
+<div class="card" onclick="selectFund(this)">Kotak MNC Fund</div>
+<div class="card" onclick="selectFund(this)">HDFC Transportation and Logistics Fund</div>
+<div class="card" onclick="selectFund(this)">Motilal Oswal Active Momentum Fund</div>
+<div class="card" onclick="selectFund(this)">Aditya Birla SL Manufacturing Equity Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- VALUE FUNDS -->
+<section id="valuePage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Value Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">DSP Value Fund</div>
+<div class="card" onclick="selectFund(this)">Quant Value Fund</div>
+<div class="card" onclick="selectFund(this)">Mahindra Manulife Value Fund</div>
+<div class="card" onclick="selectFund(this)">LIC MF Value Fund</div>
+<div class="card" onclick="selectFund(this)">HSBC Value Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- DIVIDEND YIELD FUNDS -->
+<section id="dividendPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Dividend Yield Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">Tata Dividend Yield Fund</div>
+<div class="card" onclick="selectFund(this)">Aditya Birla SL Dividend Yield Fund</div>
+<div class="card" onclick="selectFund(this)">SBI Dividend Yield Fund</div>
+<div class="card" onclick="selectFund(this)">ICICI Pru Dividend Yield Equity Fund</div>
+<div class="card" onclick="selectFund(this)">UTI Dividend Yield Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- SECTORAL FUNDS -->
+<section id="sectoralPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Sectoral Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">DSP Natural Resources & New Energy Fund</div>
+<div class="card" onclick="selectFund(this)">HDFC Defence Fund</div>
+<div class="card" onclick="selectFund(this)">ICICI Pru Commodities Fund</div>
+<div class="card" onclick="selectFund(this)">Quant BFSI Fund</div>
+<div class="card" onclick="selectFund(this)">Bandhan Transportation and Logistics Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- DOMESTIC FOF - 5 FUNDS ONLY -->
+<section id="fofPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Domestic Fund of Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">SBI Silver ETF Fund Of Fund</div>
+<div class="card" onclick="selectFund(this)">Kotak Silver ETF Fund of Fund</div>
+<div class="card" onclick="selectFund(this)">Nippon India Silver ETF Fund of Fund</div>
+<div class="card" onclick="selectFund(this)">HDFC Silver ETF Fund of Fund</div>
+<div class="card" onclick="selectFund(this)">ICICI Pru Gold ETF Fund of Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- CONTRA FUNDS -->
+<section id="contraPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Contra Funds</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">Kotak Contra Fund</div>
+<div class="card" onclick="selectFund(this)">SBI Contra Fund</div>
+<div class="card" onclick="selectFund(this)">Invesco India Contra Fund</div>
+<div class="card" onclick="selectFund(this)">UTI Contra Fund</div>
+<div class="card" onclick="selectFund(this)">Axis Contra Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- INDEX / ETF FUNDS -->
+<section id="indexPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Index Funds / ETFs</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">Tata Silver Exchange Traded Fund</div>
+<div class="card" onclick="selectFund(this)">ICICI Pru Silver ETF</div>
+<div class="card" onclick="selectFund(this)">DSP Silver ETF</div>
+<div class="card" onclick="selectFund(this)">Aditya Birla SL Silver ETF</div>
+<div class="card" onclick="selectFund(this)">Kotak Silver ETF</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- OVERSEAS FOF -->
+<section id="overseasPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+<h1>Overseas FoFs</h1>
+<div class="options">
+<div class="card" onclick="selectFund(this)">DSP World Gold Mining Overseas Equity Omni FoF</div>
+<div class="card" onclick="selectFund(this)">DSP World Mining Overseas Equity Omni FoF</div>
+<div class="card" onclick="selectFund(this)">DSP Global Clean Energy Overseas Equity Omni FoF</div>
+<div class="card" onclick="selectFund(this)">Edelweiss Greater China Equity Offshore Fund</div>
+<div class="card" onclick="selectFund(this)">Edelweiss Emerging Markets Oppo. Equity Offshore Fund</div>
+</div>
+<div class="selected-box">No fund selected</div>
+<button class="btn" onclick="invest()">Invest</button>
+</section>
+
+<!-- INVEST POPUP -->
+<div class="popup-overlay" id="investPopup">
+    <div class="popup-box">
+        <span class="popup-close-icon" onclick="closePopupCross()">&times;</span>
+        <div class="popup-header">🎯 Investment Details</div>
+
+        <div class="popup-content">
+            <div class="popup-label">📊 Selected Fund</div>
+            <div class="popup-value" id="popupFundName">-</div>
+
+            <label style="color:#00c896;font-size:12px;display:block;margin:10px 0 5px 0;">📧 YOUR EMAIL</label>
+            <input type="email" id="popupUserEmail" placeholder="Enter your email to receive fund details"
+                   style="width:100%;padding:10px;border:none;border-radius:8px;margin-bottom:10px;box-sizing:border-box;">
+        </div>
+
+        <div class="popup-email-note">
+            ✅ Fund details will be sent to your email instantly
+        </div>
+
+        <div class="popup-steps">
+            <b>📌 Steps to Invest:</b><br>
+            1. FundzBazar khulega<br>
+            2. Email box me <b>Ctrl+V</b> dabao<br>
+            3. Password daalo & Login karo<br>
+            4. Search me fund name type karo
+        </div>
+
+        <div class="popup-btn-group">
+            <button class="popup-btn popup-btn-copy" onclick="sendFundEmail()">📨 Send to Email & Continue</button>
+            <button class="popup-btn popup-btn-close" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+let selected = "";
+let historyStack = ["intro"];
+
+window.onload = function() {
+    localStorage.removeItem('selectedFund');
+    localStorage.removeItem('savedEmail');
+    selected = "";
+    document.querySelectorAll(".selected-box").forEach(b=>{
+        b.innerHTML="No fund selected";
+        b.style.background = "rgba(0,0,0,0.4)";
+        b.style.fontWeight = "normal";
+        b.style.fontSize = "16px";
+    });
+}
+
+function showPage(id){
+    document.querySelectorAll(".card").forEach(c=>c.classList.remove("active"));
+    selected = "";
+    localStorage.removeItem('selectedFund');
+
+    document.querySelectorAll("section").forEach(s=>{
+        if(s.id === id) {
+            s.style.display="flex";
+            let box = s.querySelector('.selected-box');
+            if(box) {
+                box.innerHTML="No fund selected";
+                box.style.background = "rgba(0,0,0,0.4)";
+                box.style.fontWeight = "normal";
+                box.style.fontSize = "16px";
+            }
+        } else {
+            s.style.display="none";
+        }
+    });
+    historyStack.push(id);
+}
+
+function goBack(){
+historyStack.pop();
+let prev = historyStack.pop();
+if(prev) showPage(prev);
+}
+
+function goHome(){
+historyStack = ["intro"];
+showPage("intro");
+}
+
+function selectFund(el){
+document.querySelectorAll(".card").forEach(c=>c.classList.remove("active"));
+el.classList.add("active");
+selected = el.innerText;
+
+localStorage.setItem('selectedFund', selected);
+
+document.querySelectorAll(".selected-box").forEach(b=>{
+b.innerHTML="✅ <b>Selected:</b> "+selected;
+b.style.background = "rgba(0,200,150,0.4)";
+b.style.fontWeight = "bold";
+b.style.fontSize = "16px";
+});
+}
+
+function invest(){
+    if(selected==="" || selected.trim() === ""){
+        alert("⚠️ Pehle koi fund select karo!");
+        return;
+    }
+
+    document.getElementById('popupFundName').innerText = selected;
+    document.getElementById('popupUserEmail').value = "";
+    document.getElementById('investPopup').classList.add('active');
+
+    setTimeout(function(){
+        document.getElementById('popupUserEmail').focus();
+        document.getElementById('popupUserEmail').style.border = "2px solid #ffcc00";
+        document.getElementById('popupUserEmail').style.boxShadow = "0 0 10px rgba(255,204,0,0.6)";
+    }, 300);
+}
+
+function sendFundEmail(){
+    const userEmail = document.getElementById('popupUserEmail').value.trim();
+    const fundName = selected;
+
+    if(!userEmail){
+        alert("Please enter your email");
+        document.getElementById('popupUserEmail').focus();
+        return;
+    }
+
+    if(!userEmail.includes('@')){
+        alert("Please enter valid email");
+        document.getElementById('popupUserEmail').focus();
+        return;
+    }
+
+    const btn = event.target;
+    btn.innerText = 'Sending...';
+    btn.disabled = true;
+
+    emailjs.send("service_0hs02zt", "template_dxgxzzo", {
+        to_email: userEmail,
+        user_email: userEmail,
+        fund_name: fundName
+    }).then(function(response) {
+        navigator.clipboard.writeText(userEmail).then(function() {
+            btn.innerText = '✅ Sent! Opening FundzBazar...';
+            setTimeout(function(){
+                document.getElementById('investPopup').classList.remove('active');
+                btn.innerText = '📨 Send to Email & Continue';
+                btn.disabled = false;
+                document.getElementById('popupUserEmail').value = "";
+                document.getElementById('popupUserEmail').style.border = "none";
+                document.getElementById('popupUserEmail').style.boxShadow = "none";
+                window.open("https://www.fundzbazar.com/customisedlinkregistration/7c7723/2364257c77232364257c77232d67212d6721236425246c3c","_blank");
+            }, 1500);
+        });
+    }, function(error) {
+        console.log('FAILED...', error);
+        alert('❌ Failed to send email. Please try again. Error: ' + JSON.stringify(error));
+        btn.innerText = '📨 Send to Email & Continue';
+        btn.disabled = false;
+    });
+}
+
+function closePopup(){
+    document.getElementById('investPopup').classList.remove('active');
+    document.getElementById('popupUserEmail').value = "";
+    document.getElementById('popupUserEmail').style.border = "none";
+    document.getElementById('popupUserEmail').style.boxShadow = "none";
+}
+
+function closePopupCross(){
+    document.getElementById('investPopup').classList.remove('active');
+    document.getElementById('popupUserEmail').value = "";
+    document.getElementById('popupUserEmail').style.border = "none";
+    document.getElementById('popupUserEmail').style.boxShadow = "none";
+}
+
+function calculateSIP(){
+let amount = parseFloat(document.getElementById('sipAmount').value);
+let rate = parseFloat(document.getElementById('sipRate').value);
+let years = parseFloat(document.getElementById('sipYears').value);
+if(!amount ||!rate ||!years){alert("Please fill all fields");return;}
+let months = years * 12;
+let monthlyRate = rate / 12 / 100;
+let futureValue = amount * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate * (1 + monthlyRate);
+let investedAmount = amount * months;
+let estReturn = futureValue - investedAmount;
+document.getElementById('investedAmt').innerText = '₹' + investedAmount.toLocaleString('en-IN');
+document.getElementById('estReturns').innerText = '₹' + Math.round(estReturn).toLocaleString('en-IN');
+document.getElementById('totalValue').innerText = '₹' + Math.round(futureValue).toLocaleString('en-IN');
+document.getElementById('sipResult').style.display = 'block';
+}
+
+function calculateLumpsum(){
+let amount = parseFloat(document.getElementById('lumpAmount').value);
+let rate = parseFloat(document.getElementById('lumpRate').value);
+let years = parseFloat(document.getElementById('lumpYears').value);
+if(!amount ||!rate ||!years){alert("Please fill all fields");return;}
+let futureValue = amount * Math.pow(1 + rate/100, years);
+let estReturn = futureValue - amount;
+document.getElementById('lumpInvested').innerText = '₹' + amount.toLocaleString('en-IN');
+document.getElementById('lumpReturns').innerText = '₹' + Math.round(estReturn).toLocaleString('en-IN');
+document.getElementById('lumpTotal').innerText = '₹' + Math.round(futureValue).toLocaleString('en-IN');
+document.getElementById('lumpResult').style.display = 'block';
+}
+
+function calculateSWP(){
+let amount = parseFloat(document.getElementById('swpAmount').value);
+let withdraw = parseFloat(document.getElementById('swpWithdraw').value);
+let rate = parseFloat(document.getElementById('swpRate').value);
+let years = parseFloat(document.getElementById('swpYears').value);
+if(!amount ||!withdraw ||!rate ||!years){alert("Please fill all fields");return;}
+let months = years * 12;
+let monthlyRate = rate / 12 / 100;
+let balance = amount;
+let totalWithdrawn = 0;
+for(let i=0; i<months; i++){
+  balance = balance * (1 + monthlyRate) - withdraw;
+  totalWithdrawn += withdraw;
+  if(balance <= 0){balance = 0; break;}
+}
+document.getElementById('swpWithdrawn').innerText = '₹' + totalWithdrawn.toLocaleString('en-IN');
+document.getElementById('swpFinal').innerText = '₹' + Math.round(balance).toLocaleString('en-IN');
+document.getElementById('swpResult').style.display = 'block';
+}
+
+function calculateRisk(){
+let age = document.getElementById('riskAge').value;
+let horizon = document.getElementById('riskHorizon').value;
+let tolerance = document.getElementById('riskTolerance').value;
+
+let score = 0;
+
+if(age=='18-30') score += 3;
+else if(age=='31-45') score += 2;
+else if(age=='46-60') score += 1;
+else if(age=='60+') score += 0;
+
+if(horizon=='5+') score += 3;
+else if(horizon=='3-5') score += 2;
+else if(horizon=='1-3') score += 0;
+
+if(tolerance=='high') score += 3;
+else if(tolerance=='medium') score += 2;
+else if(tolerance=='low') score += 0;
+
+let riskLevel, pos, desc, riskType, fundsList;
+
+if(score >= 7){
+    riskLevel = "🔴 Aggressive Investor";
+    pos = "85%";
+    desc = "You can handle high market volatility. Focus on equity funds for maximum growth.";
+    riskType = "aggressive";
+} else if(score >= 4){
+    riskLevel = "🟡 Moderate Investor";
+    pos = "50%";
+    desc = "Balanced approach with mix of equity and debt. Diversification is key.";
+    riskType = "moderate";
+} else {
+    riskLevel = "🟢 Conservative Investor";
+    pos = "15%";
+    desc = "Capital protection is priority. Stick to stable, low-volatility options.";
+    riskType = "conservative";
+}
+
+const fundMap = {
+    "18-30": {
+        "conservative": "• Large Cap Funds<br>• Index Funds<br>• Debt Funds<br>• Liquid Funds",
+        "moderate": "• Flexi Cap Funds<br>• Large & Mid Cap Funds<br>• Multi Cap Funds<br>• Focused Funds",
+        "aggressive": "• Small Cap Funds<br>• Mid Cap Funds<br>• Sectoral Funds<br>• Thematic Funds<br>• Contra Funds"
+    },
+    "31-45": {
+        "conservative": "• Large Cap Funds<br>• Balanced Advantage Funds<br>• Debt Funds<br>• Index Funds",
+        "moderate": "• Flexi Cap Funds<br>• Large & Mid Cap Funds<br>• Focused Funds<br>• Value Funds",
+        "aggressive": "• Mid Cap Funds<br>• Small Cap Funds<br>• Contra Funds<br>• Thematic Funds"
+    },
+    "46-60": {
+        "conservative": "• Large Cap Funds<br>• Debt Funds<br>• Liquid Funds<br>• Index Funds<br>• Dividend Yield Funds",
+        "moderate": "• Balanced Advantage Funds<br>• Large & Mid Cap Funds<br>• Dividend Yield Funds<br>• Multi Cap Funds",
+        "aggressive": "• Flexi Cap Funds<br>• Multi Cap Funds<br>• Value Funds<br>• Large & Mid Cap Funds"
+    },
+    "60+": {
+        "conservative": "• Debt Funds<br>• Liquid Funds<br>• Large Cap Funds<br>• SWP Plans<br>• Index Funds",
+        "moderate": "• Balanced Advantage Funds<br>• Dividend Yield Funds<br>• Large Cap Funds<br>• Debt Funds",
+        "aggressive": "• Large & Mid Cap Funds<br>• Flexi Cap Funds<br>• Dividend Yield Funds"
+    }
+};
+
+fundsList = fundMap[age][riskType];
+
+document.getElementById('riskBar').style.display = 'block';
+document.getElementById('riskLabels').style.display = 'flex';
+document.getElementById('riskPointer').style.left = pos;
+document.getElementById('riskTitle').innerText = riskLevel;
+document.getElementById('riskDesc').innerText = desc;
+document.getElementById('recommendedFunds').innerHTML = "<b>Age Group:</b> " + age + "<br><b>Risk Type:</b> " + riskLevel + "<br><b>Best Funds:</b><br>" + fundsList;
+document.getElementById('riskResult').style.display = 'block';
+}
+
+function openRiskTablePopup(){
+    document.getElementById('riskTablePopup').classList.add('active');
+}
+
+function closeRiskTablePopup(){
+    document.getElementById('riskTablePopup').classList.remove('active');
+}
+
+function toggleFAQ(el){
+let item = el.parentElement;
+item.classList.toggle('active');
+let symbol = item.classList.contains('active')? '-' : '+';
+el.querySelector('span:last-child').innerText = symbol;
+}
+
+function openContactForm(){
+    window.open('https://prudentcorporate.com/BusinessCard/UserDetails/37343333', '_blank');
+}
+</script>
+
+</body>
+</html>
