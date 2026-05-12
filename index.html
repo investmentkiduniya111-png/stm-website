@@ -46,6 +46,35 @@ section * {
     z-index: 1;
 }
 
+/* ============ LOGO + COMPANY NAME - TOP MIDDLE ============ */
+.logo-header {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
+    background: rgba(0,0,0,0.4);
+    padding: 8px 20px;
+    border-radius: 30px;
+}
+.logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+}
+.logo-text {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
+}
+
 .btn {
     padding: 12px 25px;
     margin: 10px;
@@ -94,7 +123,7 @@ section * {
 
 .top-nav {
     position: absolute;
-    top: 20px;
+    top: 85px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -117,7 +146,7 @@ section * {
     display: flex;
     gap: 15px;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 130px;
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
@@ -165,7 +194,7 @@ section * {
     border-radius: 10px;
     max-width: 700px;
     text-align: left;
-    margin-top: 60px;
+    margin-top: 120px;
 }
 
 .calc-box {
@@ -225,7 +254,7 @@ section * {
     border-radius: 15px;
     max-width: 800px;
     margin: 20px auto;
-    margin-top: 60px;
+    margin-top: 120px;
 }
 .risk-bar {
     width: 100%;
@@ -271,7 +300,7 @@ section * {
 }
 
 .faq-container {
-    margin-top: 60px;
+    margin-top: 120px;
 }
 .faq-item {
     background: rgba(255,255,255,0.15);
@@ -458,7 +487,21 @@ section * {
     section {
         padding: 15px 10px;
         justify-content: flex-start;
-        padding-top: 80px;
+        padding-top: 140px;
+    }
+    
+    .logo-header {
+        top: 10px;
+        padding: 6px 15px;
+    }
+    
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .logo-text {
+        font-size: 16px;
     }
     
     .btn {
@@ -482,8 +525,8 @@ section * {
     }
     
     .top-nav {
+        top: 75px;
         position: relative;
-        top: 0;
         left: 0;
         transform: none;
         margin-bottom: 15px;
@@ -597,6 +640,15 @@ section * {
     .btn {
         font-size: 11px;
     }
+    
+    .logo-text {
+        font-size: 14px;
+    }
+    
+    .logo-img {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 #intro { background-image:url("https://images.unsplash.com/photo-1579621970563-ebec7560ff3e"); }
@@ -637,6 +689,12 @@ section * {
 
 <!-- INTRO -->
 <section id="intro">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <div class="top-nav">
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
@@ -664,10 +722,14 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <button class="btn" onclick="showPage('home')">Next</button>
 
-</section>
-
-<!-- HOME -->
+</section><!-- HOME -->
 <section id="home">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 
@@ -700,7 +762,6 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
     <div class="calc-col">
       <button class="btn" style="width:100%;margin-top:20px;" onclick="calculateSIP()">Calculate</button>
     </div>
-  </div>
   <div class="calc-result" id="sipResult" style="display:none;">
     <p>Invested: <b id="investedAmt">₹0</b> | Returns: <b id="estReturns">₹0</b> | Total: <b id="totalValue">₹0</b></p>
   </div>
@@ -724,6 +785,7 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
     <div class="calc-col">
       <button class="btn" style="width:100%;margin-top:20px;" onclick="calculateLumpsum()">Calculate</button>
     </div>
+  </div>
   <div class="calc-result" id="lumpResult" style="display:none;">
     <p>Invested: <b id="lumpInvested">₹0</b> | Returns: <b id="lumpReturns">₹0</b> | Total: <b id="lumpTotal">₹0</b></p>
   </div>
@@ -770,6 +832,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- INVEST -->
 <section id="invest">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
@@ -787,8 +855,14 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 </div>
 </section>
 
-<!-- RISK METER PAGE - WITH POPUP TABLE -->
+<!-- RISK METER PAGE -->
 <section id="riskPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 
@@ -896,6 +970,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- FAQ PAGE -->
 <section id="faqPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 
@@ -952,10 +1032,14 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
     </div>
 </div>
 
-</section>
-
-<!-- EXTRA CAPS -->
+</section><!-- EXTRA CAPS -->
 <section id="extraCapsPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 
@@ -979,6 +1063,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- LARGE & MID CAP FUNDS -->
 <section id="largeMidPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Large & Mid Cap Funds</h1>
@@ -995,6 +1085,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- MULTI CAP FUNDS -->
 <section id="multiCapPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Multi Cap Funds</h1>
@@ -1011,6 +1107,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- FLEXI CAP FUNDS -->
 <section id="flexiCapPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Flexi Cap Funds</h1>
@@ -1027,6 +1129,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- FOCUSED FUNDS -->
 <section id="focusedPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Focused Funds</h1>
@@ -1043,6 +1151,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- LARGE CAP FUNDS -->
 <section id="largeCapPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Large Cap Funds</h1>
@@ -1059,6 +1173,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- MID CAP FUNDS -->
 <section id="midCapPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Mid Cap Funds</h1>
@@ -1075,6 +1195,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- SMALL CAP FUNDS -->
 <section id="smallCapPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Small Cap Funds</h1>
@@ -1091,6 +1217,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- ELSS FUNDS -->
 <section id="elssPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>ELSS Tax Saver Funds</h1>
@@ -1107,6 +1239,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- THEMATIC FUNDS -->
 <section id="thematicPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Thematic Funds</h1>
@@ -1123,6 +1261,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- VALUE FUNDS -->
 <section id="valuePage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Value Funds</h1>
@@ -1139,6 +1283,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- DIVIDEND YIELD FUNDS -->
 <section id="dividendPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Dividend Yield Funds</h1>
@@ -1155,6 +1305,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- SECTORAL FUNDS -->
 <section id="sectoralPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Sectoral Funds</h1>
@@ -1169,8 +1325,14 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 <button class="btn" onclick="invest()">Invest</button>
 </section>
 
-<!-- DOMESTIC FOF - 5 FUNDS ONLY -->
+<!-- DOMESTIC FOF -->
 <section id="fofPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Domestic Fund of Funds</h1>
@@ -1187,6 +1349,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- CONTRA FUNDS -->
 <section id="contraPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Contra Funds</h1>
@@ -1203,6 +1371,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- INDEX / ETF FUNDS -->
 <section id="indexPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Index Funds / ETFs</h1>
@@ -1219,6 +1393,12 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 <!-- OVERSEAS FOF -->
 <section id="overseasPage">
+<!-- LOGO + COMPANY NAME - TOP MIDDLE -->
+<div class="logo-header">
+    <img src="logo.jpeg" class="logo-img" alt="Logo">
+    <span class="logo-text">Investment Ki Duniya</span>
+</div>
+
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>Overseas FoFs</h1>
@@ -1303,6 +1483,7 @@ function showPage(id){
         }
     });
     historyStack.push(id);
+    window.scrollTo(0,0);
 }
 
 function goBack(){
