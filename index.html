@@ -79,10 +79,12 @@ section * {
     font-weight: bold;
     letter-spacing: 0.5px;
     box-shadow: 0 3px 10px rgba(0,200,150,0.3);
+    transition: all 0.3s ease;
 }
 .btn:hover { 
     background: #00a67d;
     box-shadow: 0 5px 15px rgba(0,200,150,0.5);
+    transform: translateY(-2px);
 }
 
 .back-btn { 
@@ -94,7 +96,7 @@ section * {
     z-index: 10;
 }
 
-/* WEBSITE DEVELOPER FLOAT BUTTON - BOTTOM RIGHT */
+/* WEBSITE DEVELOPER FLOAT BUTTON */
 .developer-float-btn {
     position: fixed;
     bottom: 20px;
@@ -111,13 +113,13 @@ section * {
     border: none;
     color: white;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 .developer-float-btn:hover {
     background: #ff6b3d;
     box-shadow: 0 5px 20px rgba(255,123,84,0.6);
     transform: scale(1.05);
 }
-/* HIDE BUTTON ON DEVELOPER PAGE */
 #developerPage ~ .developer-float-btn {
     display: none;
 }
@@ -131,16 +133,49 @@ section * {
     z-index: 10;
 }
 
-.center-wrapper {
+/* ATTRACTIVE CARD STYLES */
+.info-card {
+    background: linear-gradient(135deg, rgba(0,200,150,0.3) 0%, rgba(0,150,200,0.3) 100%);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 15px auto;
+    text-align: left;
+    border: 2px solid rgba(0,200,150,0.5);
+    box-shadow: 0 5px 20px rgba(0,200,150,0.3);
+    transition: all 0.3s ease;
+}
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,200,150,0.5);
+}
+.info-card h3 {
+    color: #00c896;
+    margin-top: 0;
     text-align: center;
-    width: 100%;
+    font-size: 20px;
+}
+.info-point {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    margin: 15px 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+.info-icon {
+    font-size: 24px;
+    flex-shrink: 0;
 }
 
-.contact-text {
-    color: white !important;
-    margin: 15px 0;
-    text-align: center;
-    font-family: Georgia, serif;
+.highlight-box {
+    background: rgba(255,123,84,0.3);
+    padding: 18px;
+    border-radius: 12px;
+    margin: 20px auto;
+    border-left: 4px solid #ff7b54;
+    max-width: 600px;
+    box-shadow: 0 3px 15px rgba(255,123,84,0.3);
 }
 
 .top-nav {
@@ -184,96 +219,27 @@ section * {
     transform: scale(1.05);
 }
 
-.options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-.card {
-    background: rgba(255,255,255,0.2);
-    padding: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 200px;
-    font-family: Georgia, serif;
-}
-.card:hover { transform: scale(1.05); }
-.card.active { background: #00c896; }
-
-.selected-box {
-    margin-top: 20px;
-    background: rgba(0,0,0,0.4);
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-family: Georgia, serif;
-}
-
-.list-box {
-    background: rgba(255,255,255,0.15);
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 700px;
-    text-align: left;
-    margin-top: 20px;
-}
-
-/* DEVELOPER PAGE ATTRACTIVE CARDS */
-.dev-card {
-    background: linear-gradient(135deg, rgba(0,200,150,0.3) 0%, rgba(0,150,200,0.3) 100%);
+/* CALCULATOR CARDS */
+.calc-card {
+    background: linear-gradient(135deg, rgba(0,200,150,0.25) 0%, rgba(0,150,200,0.25) 100%);
     padding: 25px;
-    border-radius: 15px;
-    max-width: 600px;
-    margin: 15px auto;
+    border-radius: 18px;
+    max-width: 900px;
+    margin: 20px auto;
     text-align: left;
-    border: 2px solid rgba(0,200,150,0.5);
+    border: 2px solid rgba(0,200,150,0.4);
     box-shadow: 0 5px 20px rgba(0,200,150,0.3);
 }
-.dev-card h3 {
-    color: #00c896;
-    margin-top: 0;
-    text-align: center;
-    font-size: 20px;
-}
-.dev-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 12px 0;
-    font-size: 16px;
-}
-.dev-icon {
-    font-size: 24px;
-}
-.price-tag {
-    background: rgba(255,123,84,0.3);
-    padding: 12px;
-    border-radius: 10px;
-    margin: 10px 0;
-    border-left: 4px solid #ff7b54;
-}
-.price-tag strong {
-    color: #ffcc00;
-    font-size: 18px;
-}
-
-.calc-box {
-    background: rgba(255,255,255,0.15);
-    padding: 20px;
-    border-radius: 15px;
-    max-width: 900px;
-    margin: 15px auto;
-    text-align: left;
-}
-.calc-box h3 {
+.calc-card h3 {
     text-align: center;
     margin-top: 0;
     color: #00c896;
+    font-size: 22px;
+    margin-bottom: 20px;
 }
 .calc-row {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: end;
@@ -282,112 +248,84 @@ section * {
     flex: 1;
     min-width: 150px;
 }
-.calc-box label {
+.calc-col label {
     display: block;
     margin: 8px 0 5px 0;
     font-size: 13px;
     font-family: Georgia, serif;
+    color: #00c896;
+    font-weight: bold;
 }
-.calc-box input, .calc-box select {
+.calc-col input, .calc-col select {
     width: 100%;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid rgba(0,200,150,0.3);
+    border-radius: 8px;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 15px;
+}
+.calc-col input:focus {
+    outline: none;
+    border-color: #00c896;
+    box-shadow: 0 0 10px rgba(0,200,150,0.4);
 }
 .calc-result {
-    background: rgba(0,200,150,0.3);
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 12px;
+    background: linear-gradient(135deg, rgba(0,200,150,0.4) 0%, rgba(0,150,200,0.4) 100%);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
     text-align: center;
+    border: 2px solid rgba(0,200,150,0.6);
 }
 .calc-result p {
-    margin: 3px 0;
-    font-size: 14px;
+    margin: 8px 0;
+    font-size: 15px;
     font-family: Georgia, serif;
 }
+.calc-result b {
+    color: #ffcc00;
+    font-size: 17px;
+}
 
-.risk-meter {
-    background: rgba(255,255,255,0.15);
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
     padding: 25px;
     border-radius: 15px;
-    max-width: 800px;
-    margin: 20px auto;
-    margin-top: 120px;
-}
-.risk-bar {
-    width: 100%;
-    height: 30px;
-    background: linear-gradient(to right, #00c896 0%, #ffcc00 50%, #ff4d4d 100%);
-    border-radius: 15px;
-    position: relative;
-    margin: 20px 0;
-}
-.risk-pointer {
-    position: absolute;
-    top: -10px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 15px solid white;
-    transition: left 0.5s;
-}
-.risk-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    font-family: Georgia, serif;
-}
-
-.risk-table {
-    width: 100%;
-    font-size: 11px;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
-.risk-table th {
-    padding: 8px;
-    border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(0,200,150,0.3);
-    font-family: Georgia, serif;
-}
-.risk-table td {
-    padding: 8px;
-    border: 1px solid rgba(255,255,255,0.2);
-    vertical-align: top;
-}
-
-.faq-container {
-    margin-top: 120px;
-}
-.faq-item {
-    background: rgba(255,255,255,0.15);
-    margin: 10px 0;
-    border-radius: 10px;
-    max-width: 700px;
-    text-align: left;
-}
-.faq-question {
-    padding: 15px;
     cursor: pointer;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 200px;
     font-family: Georgia, serif;
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
 }
-.faq-answer {
-    padding: 0 15px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s, padding 0.3s;
+.card:hover { 
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,200,150,0.4);
+    border-color: #00c896;
 }
-.faq-item.active .faq-answer {
-    max-height: 300px;
+.card.active { 
+    background: linear-gradient(135deg, #00c896 0%, #00a67d 100%);
+    border-color: #00c896;
+    box-shadow: 0 8px 25px rgba(0,200,150,0.6);
+}
+
+.selected-box {
+    margin-top: 20px;
+    background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
     padding: 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: Georgia, serif;
+    border: 2px solid rgba(255,255,255,0.2);
 }
 
 .disclaimer {
@@ -399,6 +337,36 @@ section * {
     margin: 30px auto 10px;
     font-size: 12px;
     line-height: 1.6;
+}
+
+.invest-now-btn {
+    background: linear-gradient(135deg, #ff7b54 0%, #ff6b3d 100%);
+    font-size: 18px !important;
+    font-weight: bold;
+    padding: 18px 50px !important;
+    margin: 20px 0 30px 0;
+    box-shadow: 0 6px 20px rgba(255,123,84,0.5);
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+.invest-now-btn:hover {
+    animation: none;
+    transform: scale(1.08);
+}
+
+.contact-text {
+    color: white !important;
+    margin: 15px 0;
+    text-align: center;
+    font-family: Georgia, serif;
+}
+
+.center-wrapper {
+    text-align: center;
+    width: 100%;
 }
 
 .popup-overlay {
@@ -526,186 +494,53 @@ section * {
     opacity: 1;
 }
 
+.risk-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.risk-table th,.risk-table td { padding: 8px; border: 1px solid rgba(255,255,255,0.2); text-align: left; vertical-align: top; }
+.risk-table th { font-family: Georgia, serif; background: rgba(0,200,150,0.3); }
+.risk-bar { width: 100%; height: 30px; background: linear-gradient(90deg, #00c896 0%, #ffcc00 50%, #ff7b54 100%); border-radius: 15px; position: relative; margin: 15px 0; }
+.risk-pointer { position: absolute; top: -10px; width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 15px solid white; transition: left 0.5s ease; }
+.risk-labels { display: flex; justify-content: space-between; font-size: 11px; margin-top: 5px; }
+
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+
 @media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-    
-    h1 {
-        font-size: 22px;
-        padding: 0 10px;
-        margin-top: 20px;
-    }
-    
-    h2 {
-        font-size: 20px;
-    }
-    
-    h3 {
-        font-size: 18px;
-    }
-    
-    section {
-        padding: 70px 10px 15px 10px;
-        justify-content: flex-start;
-    }
-    
-    .company-header {
-        top: 10px;
-        padding: 8px 20px;
-    }
-    
-    .company-text {
-        font-size: 18px;
-    }
-    
-    .btn {
-        padding: 10px 18px;
-        font-size: 12px;
-        margin: 5px;
-    }
-    
-    .back-btn, .home-btn {
-        top: 10px;
-        padding: 8px 15px;
-        font-size: 11px;
-    }
-    
-    .back-btn {
-        left: 10px;
-    }
-    
-    .developer-float-btn {
-        bottom: 15px;
-        right: 15px;
-        padding: 12px 20px;
-        font-size: 12px;
-    }
-    
-    .home-btn {
-        right: 10px;
-    }
-    
-    .top-nav {
-        margin: 15px 0;
-        gap: 5px;
-    }
-    
-    .top-nav .btn, .home-nav .btn {
-        padding: 8px 12px;
-        font-size: 11px;
-        margin: 3px;
-    }
-    
-    .home-nav {
-        margin-top: 20px;
-        gap: 8px;
-    }
-    
-    .card {
-        width: 100%;
-        max-width: 300px;
-        padding: 15px;
-        font-size: 13px;
-    }
-    
-    .options {
-        gap: 12px;
-    }
-    
-    .calc-box {
-        padding: 15px;
-        margin: 10px 5px;
-    }
-    
-    .calc-row {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    .calc-col {
-        min-width: 100%;
-    }
-    
-    .calc-box input, .calc-box select {
-        font-size: 14px;
-    }
-    
-    .list-box {
-        margin-top: 15px;
-        padding: 15px;
-        font-size: 13px;
-    }
-    
-    .dev-card {
-        padding: 20px;
-        font-size: 14px;
-    }
-    
-    .risk-meter {
-        margin-top: 20px;
-        padding: 15px;
-    }
-    
-    .risk-table {
-        font-size: 8px;
-        display: block;
-        overflow-x: auto;
-    }
-    
-    .risk-table th, .risk-table td {
-        padding: 5px;
-    }
-    
-    .faq-item {
-        font-size: 13px;
-    }
-    
-    .faq-question {
-        padding: 12px;
-    }
-    
-    .disclaimer {
-        font-size: 10px;
-        padding: 12px;
-        margin: 20px 5px 10px;
-    }
-    
-    .popup-box {
-        padding: 20px 15px;
-        max-width: 95%;
-    }
-    
-    .popup-header {
-        font-size: 18px;
-    }
-    
-    .popup-btn {
-        font-size: 12px;
-        padding: 10px;
-    }
-    
-    .selected-box {
-        font-size: 14px;
-    }
+    body { font-size: 14px; }
+    h1 { font-size: 22px; padding: 0 10px; margin-top: 20px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 18px; }
+    section { padding: 70px 10px 15px 10px; justify-content: flex-start; }
+    .company-header { top: 10px; padding: 8px 20px; }
+    .company-text { font-size: 18px; }
+    .btn { padding: 10px 18px; font-size: 12px; margin: 5px; }
+    .back-btn, .home-btn { top: 10px; padding: 8px 15px; font-size: 11px; }
+    .back-btn { left: 10px; }
+    .developer-float-btn { bottom: 15px; right: 15px; padding: 12px 20px; font-size: 12px; }
+    .home-btn { right: 10px; }
+    .top-nav { margin: 15px 0; gap: 5px; }
+    .top-nav .btn, .home-nav .btn { padding: 8px 12px; font-size: 11px; margin: 3px; }
+    .home-nav { margin-top: 20px; gap: 8px; }
+    .card { width: 100%; max-width: 300px; padding: 20px; font-size: 13px; }
+    .options { gap: 12px; }
+    .calc-card { padding: 20px; margin: 15px 5px; }
+    .calc-row { flex-direction: column; gap: 8px; }
+    .calc-col { min-width: 100%; }
+    .calc-col input, .calc-col select { font-size: 14px; }
+    .info-card { margin: 10px 5px; padding: 18px; }
+    .info-point { font-size: 14px; }
+    .invest-now-btn { font-size: 16px !important; padding: 15px 40px !important; }
+    .disclaimer { font-size: 10px; padding: 12px; margin: 20px 5px 10px; }
+    .popup-box { padding: 20px 15px; max-width: 95%; }
+    .popup-header { font-size: 18px; }
+    .popup-btn { font-size: 12px; padding: 10px; }
+    .selected-box { font-size: 14px; }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 20px;
-    }
-    
-    .card {
-        font-size: 12px;
-    }
-    
-    .btn {
-        font-size: 11px;
-    }
-    
-    .company-text {
-        font-size: 16px;
-    }
+    h1 { font-size: 20px; }
+    .card { font-size: 12px; }
+    .btn { font-size: 11px; }
+    .company-text { font-size: 16px; }
+    .invest-now-btn { font-size: 14px !important; padding: 12px 30px !important; }
 }
 
 #intro { background-image:url("https://images.unsplash.com/photo-1579621970563-ebec7560ff3e"); }
@@ -746,13 +581,13 @@ section * {
 
 <body>
 
-<!-- COMPANY NAME HEADER - LOGO HATA DIYA -->
+<!-- COMPANY NAME HEADER -->
 <div class="company-header">
     <span class="company-text">Investment Ki Duniya</span>
 </div>
 
-<!-- WEBSITE DEVELOPER FLOAT BUTTON - BOTTOM RIGHT -->
-<button class="developer-float-btn" onclick="showPage('developerPage')">👨‍💻 Website Developer</button><!-- INTRO -->
+<!-- WEBSITE DEVELOPER FLOAT BUTTON -->
+<button class="developer-float-btn" onclick="showPage('developerPage')">👨‍💻 Website Developer</button><!-- INTRO - ATTRACTIVE CARDS VERSION -->
 <section id="intro">
 <div class="top-nav">
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
@@ -760,31 +595,55 @@ section * {
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
 
-<h1>Why Should You Invest?</h1>
+<h1>💰 Why Should You Invest?</h1>
 
-<ul class="list-box">
-<li><b>First, to grow your money:</b><br>
-Money kept at home stays the same. But money invested in a bank FD, PPF, or Mutual Fund grows slowly with time just like a plant grows when you water it.</li>
+<div class="info-card">
+<div class="info-point">
+    <span class="info-icon">📈</span>
+    <div>
+        <b>First, to grow your money:</b><br>
+        Money kept at home stays the same. But money invested in a bank FD, PPF, or Mutual Fund grows slowly with time just like a plant grows when you water it.
+    </div>
+</div>
 
-<li><b>Second, to reach your dreams:</b><br>
-Want a new cycle, laptop, or college in the future? Investment helps your savings become big enough for big dreams.</li>
+<div class="info-point">
+    <span class="info-icon">🎯</span>
+    <div>
+        <b>Second, to reach your dreams:</b><br>
+        Want a new cycle, laptop, or college in the future? Investment helps your savings become big enough for big dreams.
+    </div>
+</div>
 
-<li><b>Third, to be ready for emergencies:</b><br>
-Sometimes sudden problems come. If your money is invested safely, it can help you and your family in tough times.</li>
-</ul>
+<div class="info-point">
+    <span class="info-icon">🛡️</span>
+    <div>
+        <b>Third, to be ready for emergencies:</b><br>
+        Sometimes sudden problems come. If your money is invested safely, it can help you and your family in tough times.
+    </div>
+</div>
+</div>
 
-<h2>And the best part?<br>You don't need lakhs to start.</h2>
+<div class="highlight-box">
+<h2 style="margin:0 0 10px 0;font-size:22px;">✨ And the best part?</h2>
+<p style="margin:0;font-size:16px;">You don't need lakhs to start.</p>
+</div>
 
-<p>Even ₹100 a month can become thousands in a few years that is the magic of investing early!</p>
+<div class="info-card">
+<div class="info-point">
+    <span class="info-icon">💡</span>
+    <div>
+        <b>Even ₹100 a month can become thousands in a few years</b> - that is the magic of investing early!<br><br>
+        So don't just save, invest!<br>
+        <b style="color:#ffcc00;">Invest today, for a brighter tomorrow!</b>
+    </div>
+</div>
+</div>
 
-<p>So don't just save, invest!</p>
-<p><b>Invest today, for a brighter tomorrow!</b></p>
-
-<button class="btn" onclick="showPage('home')">Next</button>
+<button class="btn" onclick="showPage('home')">Next →</button>
 
 </section>
 
-<!-- HOME -->
+<!-- HOME - ATTRACTIVE CALCULATOR CARDS -->
 <section id="home">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -795,131 +654,138 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
 
-<h1>Grow Your Money, Secure Your Future</h1>
+<h1>🌟 Grow Your Money, Secure Your Future</h1>
 
-<button class="btn" style="background:#ff7b54; font-size:16px; font-weight:bold; padding:15px 40px; margin:15px 0 25px 0; box-shadow:0 4px 15px rgba(255,123,84,0.4);" onclick="showPage('invest')">
+<button class="btn invest-now-btn" onclick="showPage('invest')">
     💰 Invest Now
 </button>
 
-<div class="calc-box">
-  <h3>SIP Calculator</h3>
+<!-- SIP CALCULATOR CARD -->
+<div class="calc-card">
+  <h3>📊 SIP Calculator</h3>
   <div class="calc-row">
     <div class="calc-col">
-      <label>Monthly ₹</label>
+      <label>💵 Monthly Investment ₹</label>
       <input type="number" id="sipAmount" value="5000">
     </div>
     <div class="calc-col">
-      <label>Return %</label>
+      <label>📈 Expected Return %</label>
       <input type="number" id="sipRate" value="12">
     </div>
     <div class="calc-col">
-      <label>Years</label>
+      <label>📅 Time Period (Years)</label>
       <input type="number" id="sipYears" value="10">
     </div>
     <div class="calc-col">
-      <button class="btn" style="width:100%;margin-top:20px;" onclick="calculateSIP()">Calculate</button>
+      <button class="btn" style="width:100%;margin-top:25px;" onclick="calculateSIP()">Calculate</button>
     </div>
-  </div>
   <div class="calc-result" id="sipResult" style="display:none;">
-    <p>Invested: <b id="investedAmt">₹0</b> | Returns: <b id="estReturns">₹0</b> | Total: <b id="totalValue">₹0</b></p>
+    <p>💰 Invested: <b id="investedAmt">₹0</b></p>
+    <p>🎯 Returns: <b id="estReturns">₹0</b></p>
+    <p>🏆 Total Value: <b id="totalValue">₹0</b></p>
   </div>
 </div>
 
-<div class="calc-box">
-  <h3>Lumpsum Calculator</h3>
+<!-- LUMPSUM CALCULATOR CARD -->
+<div class="calc-card">
+  <h3>💎 Lumpsum Calculator</h3>
   <div class="calc-row">
     <div class="calc-col">
-      <label>Investment ₹</label>
+      <label>💵 Investment Amount ₹</label>
       <input type="number" id="lumpAmount" value="100000">
     </div>
     <div class="calc-col">
-      <label>Return %</label>
+      <label>📈 Expected Return %</label>
       <input type="number" id="lumpRate" value="12">
     </div>
     <div class="calc-col">
-      <label>Years</label>
+      <label>📅 Time Period (Years)</label>
       <input type="number" id="lumpYears" value="10">
     </div>
     <div class="calc-col">
-      <button class="btn" style="width:100%;margin-top:20px;" onclick="calculateLumpsum()">Calculate</button>
+      <button class="btn" style="width:100%;margin-top:25px;" onclick="calculateLumpsum()">Calculate</button>
     </div>
   </div>
   <div class="calc-result" id="lumpResult" style="display:none;">
-    <p>Invested: <b id="lumpInvested">₹0</b> | Returns: <b id="lumpReturns">₹0</b> | Total: <b id="lumpTotal">₹0</b></p>
+    <p>💰 Invested: <b id="lumpInvested">₹0</b></p>
+    <p>🎯 Returns: <b id="lumpReturns">₹0</b></p>
+    <p>🏆 Total Value: <b id="lumpTotal">₹0</b></p>
   </div>
 </div>
 
-<div class="calc-box">
-  <h3>SWP Calculator</h3>
+<!-- SWP CALCULATOR CARD -->
+<div class="calc-card">
+  <h3>🏧 SWP Calculator</h3>
   <div class="calc-row">
     <div class="calc-col">
-      <label>Total Investment ₹</label>
+      <label>💵 Total Investment ₹</label>
       <input type="number" id="swpAmount" value="1000000">
     </div>
     <div class="calc-col">
-      <label>Withdrawal/Month ₹</label>
+      <label>💸 Withdrawal/Month ₹</label>
       <input type="number" id="swpWithdraw" value="8000">
     </div>
     <div class="calc-col">
-      <label>Return %</label>
+      <label>📈 Expected Return %</label>
       <input type="number" id="swpRate" value="8">
     </div>
     <div class="calc-col">
-      <label>Years</label>
+      <label>📅 Time Period (Years)</label>
       <input type="number" id="swpYears" value="15">
     </div>
     <div class="calc-col">
-      <button class="btn" style="width:100%;margin-top:20px;" onclick="calculateSWP()">Calculate</button>
+      <button class="btn" style="width:100%;margin-top:25px;" onclick="calculateSWP()">Calculate</button>
     </div>
+  </div>
   <div class="calc-result" id="swpResult" style="display:none;">
-    <p>Total Withdrawn: <b id="swpWithdrawn">₹0</b> | Final Value: <b id="swpFinal">₹0</b></p>
+    <p>💸 Total Withdrawn: <b id="swpWithdrawn">₹0</b></p>
+    <p>🏦 Final Value: <b id="swpFinal">₹0</b></p>
   </div>
 </div>
 
 <div class="center-wrapper">
-  <h3 class="contact-text">Please contact to know more</h3>
-
+  <h3 class="contact-text">📞 Please contact to know more</h3>
   <button class="btn" style="background:#ff7b54;" onclick="openContactForm()">Contact Now</button>
 </div>
 
 <div class="disclaimer">
-    <b>Disclaimer:</b> Mutual Fund investments are subject to market risks. Read all scheme related documents carefully before investing. Past performance is not indicative of future results. Please consult your financial advisor before making any investment decision.
+    <b>⚠️ Disclaimer:</b> Mutual Fund investments are subject to market risks. Read all scheme related documents carefully before investing. Past performance is not indicative of future results. Please consult your financial advisor before making any investment decision.
 </div>
 
 </section>
 
-<!-- WEBSITE DEVELOPER PAGE - ATTRACTIVE VERSION -->
+<!-- WEBSITE DEVELOPER PAGE - ALREADY ATTRACTIVE -->
 <section id="developerPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 
 <h1>👨‍💻 Website Developer</h1>
 
-<div class="dev-card">
+<div class="info-card">
 <h3>About Me</h3>
-<div class="dev-info"><span class="dev-icon">👤</span> <b>Name:</b> Rudransh Dhariwal</div>
-<div class="dev-info"><span class="dev-icon">🎂</span> <b>Age:</b> 15 Years</div>
-<div class="dev-info"><span class="dev-icon">📞</span> <b>Contact:</b> 9165212111</div>
-<div class="dev-info"><span class="dev-icon">📧</span> <b>Email:</b> RumiDhariwal@gmail.com</div>
+<div class="info-point"><span class="info-icon">👤</span> <div><b>Name:</b> Rudransh Dhariwal</div></div>
+<div class="info-point"><span class="info-icon">🎂</span> <div><b>Age:</b> 15 Years</div></div>
+<div class="info-point"><span class="info-icon">📞</span> <div><b>Contact:</b> 9165212111</div></div>
+<div class="info-point"><span class="info-icon">📧</span> <div><b>Email:</b> RumiDhariwal@gmail.com</div></div>
 </div>
 
-<div class="dev-card">
+<div class="info-card">
 <h3>💰 Services & Pricing</h3>
-<div class="price-tag">
-<strong>Complete Website - 5 Pages: ₹1000 only</strong><br>
+<div class="highlight-box" style="margin:10px 0;">
+<strong style="color:#ffcc00;font-size:18px;">Complete Website - 5 Pages: ₹1000 only</strong><br>
 Full responsive design + SEO ready
 </div>
-<div class="price-tag">
-<strong>Small Changes/Updates: FREE</strong><br>
+<div class="highlight-box" style="margin:10px 0;">
+<strong style="color:#ffcc00;font-size:18px;">Small Changes/Updates: FREE</strong><br>
 Text changes, image updates, bug fixes
 </div>
-<div class="price-tag">
-<strong>Major Changes: ₹200 per page</strong><br>
+<div class="highlight-box" style="margin:10px 0;">
+<strong style="color:#ffcc00;font-size:18px;">Major Changes: ₹200 per page</strong><br>
 New sections, design changes, features
 </div>
 </div>
 
-<div class="dev-card">
+<div class="info-card">
 <h3>✨ Why Choose Me</h3>
 <p style="text-align:center;font-size:15px;line-height:1.8;">
 Young developer with passion for creating clean, mobile-friendly websites. 
@@ -928,7 +794,7 @@ Let's build your dream website together! 🚀
 </p>
 </div>
 
-</section><!-- INVEST -->
+</section><!-- INVEST - ATTRACTIVE CARDS -->
 <section id="invest">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -938,28 +804,28 @@ Let's build your dream website together! 🚀
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
 
-<h1>Select Category</h1>
+<h1>📂 Select Category</h1>
 
 <div class="options">
-<div class="card" onclick="showPage('midCapPage')">Mid Cap</div>
-<div class="card" onclick="showPage('smallCapPage')">Small Cap</div>
-<div class="card" onclick="showPage('largeCapPage')">Large Cap</div>
-<div class="card" onclick="showPage('extraCapsPage')">For More Caps</div>
+<div class="card" onclick="showPage('midCapPage')">📊 Mid Cap</div>
+<div class="card" onclick="showPage('smallCapPage')">💎 Small Cap</div>
+<div class="card" onclick="showPage('largeCapPage')">🏢 Large Cap</div>
+<div class="card" onclick="showPage('extraCapsPage')">➕ For More Caps</div>
 </div>
 </section>
 
-<!-- RISK METER PAGE -->
+<!-- RISK METER PAGE - ATTRACTIVE VERSION -->
 <section id="riskPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 
-<h1>Know Your Risk Profile</h1>
+<h1>🎯 Know Your Risk Profile</h1>
 
-<div class="risk-meter">
-    <h3>Select Your Risk Appetite</h3>
+<div class="calc-card">
+    <h3>📊 Select Your Risk Appetite</h3>
     <div class="calc-row">
         <div class="calc-col">
-            <label>Age</label>
+            <label>🎂 Age Group</label>
             <select id="riskAge">
                 <option value="18-30">18-30 Years</option>
                 <option value="31-45">31-45 Years</option>
@@ -968,7 +834,7 @@ Let's build your dream website together! 🚀
             </select>
         </div>
         <div class="calc-col">
-            <label>Investment Horizon</label>
+            <label>⏰ Investment Horizon</label>
             <select id="riskHorizon">
                 <option value="1-3">1-3 Years</option>
                 <option value="3-5">3-5 Years</option>
@@ -976,33 +842,33 @@ Let's build your dream website together! 🚀
             </select>
         </div>
         <div class="calc-col">
-            <label>Risk Tolerance</label>
+            <label>⚖️ Risk Tolerance</label>
             <select id="riskTolerance">
                 <option value="low">Conservative</option>
                 <option value="medium">Moderate</option>
                 <option value="high">Aggressive</option>
             </select>
         </div>
-    </div>
-    <button class="btn" style="width:100%;margin-top:15px;" onclick="calculateRisk()">Check My Risk Profile</button>
+    <button class="btn" style="width:100%;margin-top:20px;font-size:16px;" onclick="calculateRisk()">🔍 Check My Risk Profile</button>
 
-    <div class="risk-bar" id="riskBar" style="display:none;">
+    <div class="risk-bar" id="riskBar" style="display:none;margin-top:25px;">
         <div class="risk-pointer" id="riskPointer"></div>
     </div>
     <div class="risk-labels" id="riskLabels" style="display:none;">
-        <span>Conservative</span>
-        <span>Moderate</span>
-        <span>Aggressive</span>
+        <span>🟢 Conservative</span>
+        <span>🟡 Moderate</span>
+        <span>🔴 Aggressive</span>
     </div>
 
     <div id="riskResult" style="margin-top:20px; display:none;">
-        <h3 id="riskTitle"></h3>
-        <p id="riskDesc"></p>
+        <div class="highlight-box">
+            <h3 id="riskTitle" style="margin:0;color:#ffcc00;"></h3>
+            <p id="riskDesc" style="margin:10px 0 0 0;"></p>
+        </div>
 
-        <div style="background:rgba(0,0,0,0.3);padding:15px;border-radius:12px;margin-top:20px;text-align:left;">
-            <h4 style="text-align:center;margin:0 0 15px 0;color:#00c896;">📊 Recommended Funds For You</h4>
-            <div id="recommendedFunds" style="font-size:13px;line-height:1.8;"></div>
-
+        <div class="info-card" style="margin-top:20px;">
+            <h3>📊 Recommended Funds For You</h3>
+            <div id="recommendedFunds" style="font-size:14px;line-height:2;"></div>
             <button class="btn" style="width:100%;margin-top:15px;background:#ff7b54;" onclick="openRiskTablePopup()">📋 View Full Comparison Table</button>
         </div>
     </div>
@@ -1012,13 +878,13 @@ Let's build your dream website together! 🚀
 
 <!-- RISK TABLE POPUP -->
 <div class="popup-overlay" id="riskTablePopup">
-    <div class="popup-box" style="max-width:600px;">
+    <div class="popup-box" style="max-width:650px;">
         <span class="popup-close-icon" onclick="closeRiskTablePopup()">&times;</span>
         <div class="popup-header">📊 Complete Fund Comparison Table</div>
 
         <div style="background:rgba(0,0,0,0.3);padding:15px;border-radius:12px;margin:15px 0;text-align:left;max-height:400px;overflow-y:auto;">
             <table class="risk-table">
-                <tr style="background:rgba(0,200,150,0.3);position:sticky;top:0;">
+                <tr style="background:linear-gradient(135deg, rgba(0,200,150,0.4) 0%, rgba(0,150,200,0.4) 100%);position:sticky;top:0;">
                     <th>Age Group</th>
                     <th>🟢 Conservative</th>
                     <th>🟡 Moderate</th>
@@ -1055,98 +921,121 @@ Let's build your dream website together! 🚀
     </div>
 </div>
 
-<!-- FAQ PAGE -->
+<!-- FAQ PAGE - ATTRACTIVE CARDS -->
 <section id="faqPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 
-<h1>Frequently Asked Questions</h1>
+<h1>❓ Frequently Asked Questions</h1>
 
 <div class="faq-container">
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-        <span>What is a Mutual Fund?</span>
-        <span>+</span>
+<div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
+    <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">💰</span> <span>What is a Mutual Fund?</span></span>
+        <span style="font-size:24px;font-weight:bold;">+</span>
     </div>
-    <div class="faq-answer">
-        A mutual fund pools money from many investors to invest in stocks, bonds, or other securities. It is managed by professional fund managers who aim to grow your money based on the fund's objective.
-    </div>
-</div>
-
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-        <span>What is SIP?</span>
-        <span>+</span>
-    </div>
-    <div class="faq-answer">
-        SIP Systematic Investment Plan allows you to invest a fixed amount regularly in mutual funds. You can start with as low as ₹500 per month. It helps in rupee cost averaging and disciplined investing.
+    <div class="faq-answer" style="padding:0 20px;">
+        <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
+            A mutual fund pools money from many investors to invest in stocks, bonds, or other securities. It is managed by professional fund managers who aim to grow your money based on the fund's objective.
+        </div>
     </div>
 </div>
 
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-        <span>Is my money safe in Mutual Funds?</span>
-        <span>+</span>
+<div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
+    <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">📊</span> <span>What is SIP?</span></span>
+        <span style="font-size:24px;font-weight:bold;">+</span>
     </div>
-    <div class="faq-answer">
-        Mutual funds are regulated by SEBI and are subject to market risks. While they do not guarantee returns, diversification and professional management help reduce risk. Choose funds based on your risk appetite.
-    </div>
-</div>
-
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-        <span>What is ELSS and its tax benefit?</span>
-        <span>+</span>
-    </div>
-    <div class="faq-answer">
-        ELSS Equity Linked Savings Scheme is a tax-saving mutual fund with 3-year lock-in. You can claim deduction up to ₹1.5 lakh under Section 80C of Income Tax Act. Returns above ₹1 lakh are taxed at 10% LTCG.
+    <div class="faq-answer" style="padding:0 20px;">
+        <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
+            SIP Systematic Investment Plan allows you to invest a fixed amount regularly in mutual funds. You can start with as low as ₹500 per month. It helps in rupee cost averaging and disciplined investing.
+        </div>
     </div>
 </div>
 
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-        <span>How to withdraw money from Mutual Funds?</span>
-        <span>+</span>
+<div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
+    <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">🛡️</span> <span>Is my money safe in Mutual Funds?</span></span>
+        <span style="font-size:24px;font-weight:bold;">+</span>
     </div>
-    <div class="faq-answer">
-        You can redeem units anytime for open-ended funds. Money is credited to your bank account within 1-3 working days. For ELSS, withdrawal is allowed only after 3 years lock-in period.
+    <div class="faq-answer" style="padding:0 20px;">
+        <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
+            Mutual funds are regulated by SEBI and are subject to market risks. While they do not guarantee returns, diversification and professional management help reduce risk. Choose funds based on your risk appetite.
+        </div>
+    </div>
+</div>
+
+<div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
+    <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">💵</span> <span>What is ELSS and its tax benefit?</span></span>
+        <span style="font-size:24px;font-weight:bold;">+</span>
+    </div>
+    <div class="faq-answer" style="padding:0 20px;">
+        <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
+            ELSS Equity Linked Savings Scheme is a tax-saving mutual fund with 3-year lock-in. You can claim deduction up to ₹1.5 lakh under Section 80C of Income Tax Act. Returns above ₹1 lakh are taxed at 10% LTCG.
+        </div>
+    </div>
+</div>
+
+<div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
+    <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">🏧</span> <span>How to withdraw money from Mutual Funds?</span></span>
+        <span style="font-size:24px;font-weight:bold;">+</span>
+    </div>
+    <div class="faq-answer" style="padding:0 20px;">
+        <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
+            You can redeem units anytime for open-ended funds. Money is credited to your bank account within 1-3 working days. For ELSS, withdrawal is allowed only after 3 years lock-in period.
+        </div>
     </div>
 </div>
 </div>
 
 </section>
 
-<!-- ABOUT US PAGE -->
+<!-- ABOUT US PAGE - ATTRACTIVE CARDS -->
 <section id="aboutPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 
-<h1>About Investment Ki Duniya</h1>
+<h1>ℹ️ About Investment Ki Duniya</h1>
 
-<div class="list-box">
+<div class="info-card">
 <h3>🎯 Our Mission</h3>
-<p>Investment Ki Duniya's mission is to provide financial literacy to every Indian and help them invest their money smartly. We want you to achieve big dreams even with small investments.</p>
+<div class="info-point">
+    <span class="info-icon">🚀</span>
+    <div>
+        Investment Ki Duniya's mission is to provide financial literacy to every Indian and help them invest their money smartly. We want you to achieve big dreams even with small investments.
+    </div>
+</div>
+</div>
 
+<div class="info-card">
 <h3>💡 What We Do</h3>
-<p>• Mutual Fund education and awareness<br>
-- Free SIP, Lumpsum, SWP calculators<br>
-- Fund recommendations based on risk profile<br>
-- Curated list of best performing funds<br>
-- Guidance throughout complete investment journey</p>
+<div class="info-point"><span class="info-icon">📚</span> <div>Mutual Fund education and awareness</div></div>
+<div class="info-point"><span class="info-icon">🧮</span> <div>Free SIP, Lumpsum, SWP calculators</div></div>
+<div class="info-point"><span class="info-icon">🎯</span> <div>Fund recommendations based on risk profile</div></div>
+<div class="info-point"><span class="info-icon">⭐</span> <div>Curated list of best performing funds</div></div>
+<div class="info-point"><span class="info-icon">🤝</span> <div>Guidance throughout complete investment journey</div></div>
+</div>
 
-<h3>🚀 Why Choose Us</h3>
-<p>• 100% Free platform - no hidden charges<br>
-- Information only on SEBI registered mutual funds<br>
-- Beginner friendly - explained in simple language<br>
-- Works perfectly on Mobile + Desktop<br>
-- Regular updates with latest fund data</p>
+<div class="info-card">
+<h3>🌟 Why Choose Us</h3>
+<div class="info-point"><span class="info-icon">✅</span> <div>100% Free platform - no hidden charges</div></div>
+<div class="info-point"><span class="info-icon">🛡️</span> <div>Information only on SEBI registered mutual funds</div></div>
+<div class="info-point"><span class="info-icon">👶</span> <div>Beginner friendly - explained in simple language</div></div>
+<div class="info-point"><span class="info-icon">📱</span> <div>Works perfectly on Mobile + Desktop</div></div>
+<div class="info-point"><span class="info-icon">🔄</span> <div>Regular updates with latest fund data</div></div>
+</div>
 
+<div class="info-card">
 <h3>📞 Contact</h3>
-<p><b>Jay Kumar Dhariwal</b><br>
-Contact: 9301450258<br>
-Email: investmentkiduniya111@gmail.com</p>
+<div class="info-point"><span class="info-icon">👤</span> <div><b>Jay Kumar Dhariwal</b></div></div>
+<div class="info-point"><span class="info-icon">📱</span> <div><b>Contact:</b> 9301450258</div></div>
+<div class="info-point"><span class="info-icon">📧</span> <div><b>Email:</b> investmentkiduniya111@gmail.com</div></div>
+</div>
 
-<p style="text-align:center;margin-top:20px;"><b>Invest Today, For A Brighter Tomorrow! 🌟</b></p>
+<div class="highlight-box" style="text-align:center;">
+<p style="margin:0;font-size:18px;"><b>Invest Today, For A Brighter Tomorrow! 🌟</b></p>
 </div>
 
 </section>
@@ -1161,22 +1050,22 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
 
-<h1>More Fund Categories</h1>
+<h1>📂 More Fund Categories</h1>
 
 <div class="options">
-<div class="card" onclick="showPage('largeMidPage')">Large & Mid Cap</div>
-<div class="card" onclick="showPage('multiCapPage')">Multi Cap</div>
-<div class="card" onclick="showPage('flexiCapPage')">Flexi Cap</div>
-<div class="card" onclick="showPage('focusedPage')">Focused Funds</div>
-<div class="card" onclick="showPage('elssPage')">ELSS Funds</div>
-<div class="card" onclick="showPage('thematicPage')">Thematic Funds</div>
-<div class="card" onclick="showPage('valuePage')">Value Funds</div>
-<div class="card" onclick="showPage('dividendPage')">Dividend Yield Funds</div>
-<div class="card" onclick="showPage('sectoralPage')">Sectoral Funds</div>
-<div class="card" onclick="showPage('fofPage')">Domestic FoFs</div>
-<div class="card" onclick="showPage('contraPage')">Contra Funds</div>
-<div class="card" onclick="showPage('indexPage')">Index / ETFs</div>
-<div class="card" onclick="showPage('overseasPage')">Overseas FoFs</div>
+<div class="card" onclick="showPage('largeMidPage')">📊 Large & Mid Cap</div>
+<div class="card" onclick="showPage('multiCapPage')">🎯 Multi Cap</div>
+<div class="card" onclick="showPage('flexiCapPage')">🔄 Flexi Cap</div>
+<div class="card" onclick="showPage('focusedPage')">🔍 Focused Funds</div>
+<div class="card" onclick="showPage('elssPage')">💵 ELSS Funds</div>
+<div class="card" onclick="showPage('thematicPage')">🎨 Thematic Funds</div>
+<div class="card" onclick="showPage('valuePage')">💎 Value Funds</div>
+<div class="card" onclick="showPage('dividendPage')">💰 Dividend Yield</div>
+<div class="card" onclick="showPage('sectoralPage')">🏭 Sectoral Funds</div>
+<div class="card" onclick="showPage('fofPage')">🔗 Domestic FoFs</div>
+<div class="card" onclick="showPage('contraPage')">↩️ Contra Funds</div>
+<div class="card" onclick="showPage('indexPage')">📈 Index / ETFs</div>
+<div class="card" onclick="showPage('overseasPage')">🌍 Overseas FoFs</div>
 </div>
 </section><!-- LARGE & MID CAP FUNDS -->
 <section id="largeMidPage">
@@ -1187,7 +1076,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Large & Mid Cap Funds</h1>
+<h1>📊 Large & Mid Cap Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">Motilal Oswal Large and Midcap Fund</div>
 <div class="card" onclick="selectFund(this)">HSBC Large & Mid Cap Fund</div>
@@ -1196,7 +1085,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">Invesco India Large & Mid Cap Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- MULTI CAP FUNDS -->
@@ -1208,7 +1097,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Multi Cap Funds</h1>
+<h1>🎯 Multi Cap Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">Groww Multicap Fund</div>
 <div class="card" onclick="selectFund(this)">Bank of India Multi Cap Fund</div>
@@ -1217,7 +1106,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">Kotak Multicap Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- FLEXI CAP FUNDS -->
@@ -1229,7 +1118,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Flexi Cap Funds</h1>
+<h1>🔄 Flexi Cap Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">Bank of India Flexi Cap Fund</div>
 <div class="card" onclick="selectFund(this)">Navi Flexi Cap Fund</div>
@@ -1238,7 +1127,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">Aditya Birla SL Flexi Cap Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- FOCUSED FUNDS -->
@@ -1250,7 +1139,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Focused Funds</h1>
+<h1>🔍 Focused Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">Motilal Oswal Focused Fund</div>
 <div class="card" onclick="selectFund(this)">SBI Focused Fund</div>
@@ -1259,7 +1148,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">Old Bridge Focused Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- LARGE CAP FUNDS -->
@@ -1271,7 +1160,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Large Cap Funds</h1>
+<h1>🏢 Large Cap Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">Aditya Birla SL Large Cap Fund</div>
 <div class="card" onclick="selectFund(this)">Quant Large Cap Fund</div>
@@ -1280,7 +1169,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">SBI Large Cap Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- MID CAP FUNDS -->
@@ -1292,7 +1181,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Mid Cap Funds</h1>
+<h1>📊 Mid Cap Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">ICICI Pru MidCap Fund</div>
 <div class="card" onclick="selectFund(this)">HSBC Midcap Fund</div>
@@ -1301,7 +1190,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">Helios Mid Cap Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- SMALL CAP FUNDS -->
@@ -1313,7 +1202,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Small Cap Funds</h1>
+<h1>💎 Small Cap Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">TRUSTMF Small Cap Fund</div>
 <div class="card" onclick="selectFund(this)">Union Small Cap Fund</div>
@@ -1322,7 +1211,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">Mirae Asset Small Cap Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- ELSS FUNDS -->
@@ -1334,7 +1223,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>ELSS Tax Saver Funds</h1>
+<h1>💵 ELSS Tax Saver Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">Motilal Oswal ELSS Tax Saver Fund</div>
 <div class="card" onclick="selectFund(this)">Quant ELSS Tax Saver Fund</div>
@@ -1343,7 +1232,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">Edelweiss ELSS Tax Saver Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- THEMATIC FUNDS -->
@@ -1355,7 +1244,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Thematic Funds</h1>
+<h1>🎨 Thematic Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">SBI Automotive Oppo. Fund</div>
 <div class="card" onclick="selectFund(this)">Kotak MNC Fund</div>
@@ -1364,7 +1253,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">Aditya Birla SL Manufacturing Equity Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- VALUE FUNDS -->
@@ -1376,7 +1265,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Value Funds</h1>
+<h1>💎 Value Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">DSP Value Fund</div>
 <div class="card" onclick="selectFund(this)">Quant Value Fund</div>
@@ -1385,7 +1274,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">HSBC Value Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- DIVIDEND YIELD FUNDS -->
@@ -1397,7 +1286,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Dividend Yield Funds</h1>
+<h1>💰 Dividend Yield Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">Tata Dividend Yield Fund</div>
 <div class="card" onclick="selectFund(this)">Aditya Birla SL Dividend Yield Fund</div>
@@ -1406,7 +1295,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">UTI Dividend Yield Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- SECTORAL FUNDS -->
@@ -1418,7 +1307,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Sectoral Funds</h1>
+<h1>🏭 Sectoral Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">DSP Natural Resources & New Energy Fund</div>
 <div class="card" onclick="selectFund(this)">HDFC Defence Fund</div>
@@ -1427,7 +1316,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">Bandhan Transportation and Logistics Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- DOMESTIC FOF -->
@@ -1439,7 +1328,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Domestic Fund of Funds</h1>
+<h1>🔗 Domestic Fund of Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">SBI Silver ETF Fund Of Fund</div>
 <div class="card" onclick="selectFund(this)">Kotak Silver ETF Fund of Fund</div>
@@ -1448,7 +1337,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">ICICI Pru Gold ETF Fund of Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- CONTRA FUNDS -->
@@ -1460,7 +1349,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Contra Funds</h1>
+<h1>↩️ Contra Funds</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">Kotak Contra Fund</div>
 <div class="card" onclick="selectFund(this)">SBI Contra Fund</div>
@@ -1469,7 +1358,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">Axis Contra Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- INDEX / ETF FUNDS -->
@@ -1481,7 +1370,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Index Funds / ETFs</h1>
+<h1>📈 Index Funds / ETFs</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">Tata Silver Exchange Traded Fund</div>
 <div class="card" onclick="selectFund(this)">ICICI Pru Silver ETF</div>
@@ -1490,7 +1379,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">Kotak Silver ETF</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
+<button class="btn" onclick="invest()">💰 Invest</button>
 </section>
 
 <!-- OVERSEAS FOF -->
@@ -1502,7 +1391,7 @@ Email: investmentkiduniya111@gmail.com</p>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
 </div>
-<h1>Overseas FoFs</h1>
+<h1>🌍 Overseas FoFs</h1>
 <div class="options">
 <div class="card" onclick="selectFund(this)">DSP World Gold Mining Overseas Equity Omni FoF</div>
 <div class="card" onclick="selectFund(this)">DSP World Mining Overseas Equity Omni FoF</div>
@@ -1511,10 +1400,8 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="selectFund(this)">Edelweiss Emerging Markets Oppo. Equity Offshore Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
-<button class="btn" onclick="invest()">Invest</button>
-</section>
-
-<!-- INVEST POPUP -->
+<button class="btn" onclick="invest()">💰 Invest</button>
+</section><!-- INVEST POPUP -->
 <div class="popup-overlay" id="investPopup">
     <div class="popup-box">
         <span class="popup-close-icon" onclick="closePopupCross()">&times;</span>
@@ -1524,9 +1411,9 @@ Email: investmentkiduniya111@gmail.com</p>
             <div class="popup-label">📊 Selected Fund</div>
             <div class="popup-value" id="popupFundName">-</div>
 
-            <label style="color:#00c896;font-size:12px;display:block;margin:10px 0 5px 0;">📧 YOUR EMAIL</label>
+            <label style="color:#00c896;font-size:12px;display:block;margin:10px 0 5px 0;font-family:Georgia,serif;">📧 YOUR EMAIL</label>
             <input type="email" id="popupUserEmail" placeholder="Enter your email to receive fund details"
-                   style="width:100%;padding:10px;border:none;border-radius:8px;margin-bottom:10px;box-sizing:border-box;">
+                   style="width:100%;padding:12px;border:2px solid rgba(0,200,150,0.3);border-radius:8px;margin-bottom:10px;box-sizing:border-box;background:rgba(255,255,255,0.1);color:white;">
         </div>
 
         <div class="popup-email-note">
@@ -1558,7 +1445,7 @@ window.onload = function() {
     selected = "";
     document.querySelectorAll(".selected-box").forEach(b=>{
         b.innerHTML="No fund selected";
-        b.style.background = "rgba(0,0,0,0.4)";
+        b.style.background = "linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%)";
         b.style.fontWeight = "normal";
         b.style.fontSize = "16px";
     });
@@ -1575,7 +1462,7 @@ function showPage(id){
             let box = s.querySelector('.selected-box');
             if(box) {
                 box.innerHTML="No fund selected";
-                box.style.background = "rgba(0,0,0,0.4)";
+                box.style.background = "linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%)";
                 box.style.fontWeight = "normal";
                 box.style.fontSize = "16px";
             }
@@ -1607,7 +1494,7 @@ localStorage.setItem('selectedFund', selected);
 
 document.querySelectorAll(".selected-box").forEach(b=>{
 b.innerHTML="✅ <b>Selected:</b> "+selected;
-b.style.background = "rgba(0,200,150,0.4)";
+b.style.background = "linear-gradient(135deg, rgba(0,200,150,0.5) 0%, rgba(0,150,200,0.5) 100%)";
 b.style.fontWeight = "bold";
 b.style.fontSize = "16px";
 });
@@ -1662,7 +1549,7 @@ function sendFundEmail(){
                 btn.innerText = '📨 Send to Email & Continue';
                 btn.disabled = false;
                 document.getElementById('popupUserEmail').value = "";
-                document.getElementById('popupUserEmail').style.border = "none";
+                document.getElementById('popupUserEmail').style.border = "2px solid rgba(0,200,150,0.3)";
                 document.getElementById('popupUserEmail').style.boxShadow = "none";
                 window.open("https://www.fundzbazar.com/customisedlinkregistration/7c7723/2364257c77232364257c77232d67212d6721236425246c3c","_blank");
             }, 1500);
@@ -1678,14 +1565,14 @@ function sendFundEmail(){
 function closePopup(){
     document.getElementById('investPopup').classList.remove('active');
     document.getElementById('popupUserEmail').value = "";
-    document.getElementById('popupUserEmail').style.border = "none";
+    document.getElementById('popupUserEmail').style.border = "2px solid rgba(0,200,150,0.3)";
     document.getElementById('popupUserEmail').style.boxShadow = "none";
 }
 
 function closePopupCross(){
     document.getElementById('investPopup').classList.remove('active');
     document.getElementById('popupUserEmail').value = "";
-    document.getElementById('popupUserEmail').style.border = "none";
+    document.getElementById('popupUserEmail').style.border = "2px solid rgba(0,200,150,0.3)";
     document.getElementById('popupUserEmail').style.boxShadow = "none";
 }
 
@@ -1807,7 +1694,7 @@ document.getElementById('riskLabels').style.display = 'flex';
 document.getElementById('riskPointer').style.left = pos;
 document.getElementById('riskTitle').innerText = riskLevel;
 document.getElementById('riskDesc').innerText = desc;
-document.getElementById('recommendedFunds').innerHTML = "<b>Age Group:</b> " + age + "<br><b>Risk Type:</b> " + riskLevel + "<br><b>Best Funds:</b><br>" + fundsList;
+document.getElementById('recommendedFunds').innerHTML = "<b>🎂 Age Group:</b> " + age + "<br><b>⚖️ Risk Type:</b> " + riskLevel + "<br><b>📊 Best Funds:</b><br>" + fundsList;
 document.getElementById('riskResult').style.display = 'block';
 }
 
@@ -1820,10 +1707,16 @@ function closeRiskTablePopup(){
 }
 
 function toggleFAQ(el){
-let item = el.parentElement;
-item.classList.toggle('active');
-let symbol = item.classList.contains('active')? '-' : '+';
-el.querySelector('span:last-child').innerText = symbol;
+let item = el.parentElement.parentElement;
+let answer = item.querySelector('.faq-answer');
+let symbol = item.querySelector('span:last-child');
+if(answer.style.maxHeight){
+    answer.style.maxHeight = null;
+    symbol.innerText = '+';
+} else {
+    answer.style.maxHeight = answer.scrollHeight + "px";
+    symbol.innerText = '-';
+}
 }
 
 function openContactForm(){
