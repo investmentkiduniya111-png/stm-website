@@ -46,6 +46,26 @@ section * {
     z-index: 1;
 }
 
+/* ============ COMPANY NAME - FIXED TOP ============ */
+.company-header {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background: rgba(0,0,0,0.4);
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+.company-text {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
+}
+
 .btn {
     padding: 12px 25px;
     margin: 10px;
@@ -97,6 +117,10 @@ section * {
     box-shadow: 0 5px 20px rgba(255,123,84,0.6);
     transform: scale(1.05);
 }
+/* HIDE BUTTON ON DEVELOPER PAGE */
+#developerPage ~ .developer-float-btn {
+    display: none;
+}
 
 .home-btn { 
     position: absolute; 
@@ -144,7 +168,7 @@ section * {
     display: flex;
     gap: 15px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 80px;
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
@@ -193,6 +217,45 @@ section * {
     max-width: 700px;
     text-align: left;
     margin-top: 20px;
+}
+
+/* DEVELOPER PAGE ATTRACTIVE CARDS */
+.dev-card {
+    background: linear-gradient(135deg, rgba(0,200,150,0.3) 0%, rgba(0,150,200,0.3) 100%);
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 15px auto;
+    text-align: left;
+    border: 2px solid rgba(0,200,150,0.5);
+    box-shadow: 0 5px 20px rgba(0,200,150,0.3);
+}
+.dev-card h3 {
+    color: #00c896;
+    margin-top: 0;
+    text-align: center;
+    font-size: 20px;
+}
+.dev-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+    font-size: 16px;
+}
+.dev-icon {
+    font-size: 24px;
+}
+.price-tag {
+    background: rgba(255,123,84,0.3);
+    padding: 12px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #ff7b54;
+}
+.price-tag strong {
+    color: #ffcc00;
+    font-size: 18px;
 }
 
 .calc-box {
@@ -483,8 +546,17 @@ section * {
     }
     
     section {
-        padding: 60px 10px 15px 10px;
+        padding: 70px 10px 15px 10px;
         justify-content: flex-start;
+    }
+    
+    .company-header {
+        top: 10px;
+        padding: 8px 20px;
+    }
+    
+    .company-text {
+        font-size: 18px;
     }
     
     .btn {
@@ -565,6 +637,11 @@ section * {
         font-size: 13px;
     }
     
+    .dev-card {
+        padding: 20px;
+        font-size: 14px;
+    }
+    
     .risk-meter {
         margin-top: 20px;
         padding: 15px;
@@ -625,6 +702,10 @@ section * {
     .btn {
         font-size: 11px;
     }
+    
+    .company-text {
+        font-size: 16px;
+    }
 }
 
 #intro { background-image:url("https://images.unsplash.com/photo-1579621970563-ebec7560ff3e"); }
@@ -664,6 +745,11 @@ section * {
 </head>
 
 <body>
+
+<!-- COMPANY NAME HEADER - LOGO HATA DIYA -->
+<div class="company-header">
+    <span class="company-text">Investment Ki Duniya</span>
+</div>
 
 <!-- WEBSITE DEVELOPER FLOAT BUTTON - BOTTOM RIGHT -->
 <button class="developer-float-btn" onclick="showPage('developerPage')">👨‍💻 Website Developer</button><!-- INTRO -->
@@ -733,6 +819,7 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
     <div class="calc-col">
       <button class="btn" style="width:100%;margin-top:20px;" onclick="calculateSIP()">Calculate</button>
     </div>
+  </div>
   <div class="calc-result" id="sipResult" style="display:none;">
     <p>Invested: <b id="investedAmt">₹0</b> | Returns: <b id="estReturns">₹0</b> | Total: <b id="totalValue">₹0</b></p>
   </div>
@@ -756,6 +843,7 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
     <div class="calc-col">
       <button class="btn" style="width:100%;margin-top:20px;" onclick="calculateLumpsum()">Calculate</button>
     </div>
+  </div>
   <div class="calc-result" id="lumpResult" style="display:none;">
     <p>Invested: <b id="lumpInvested">₹0</b> | Returns: <b id="lumpReturns">₹0</b> | Total: <b id="lumpTotal">₹0</b></p>
   </div>
@@ -783,7 +871,6 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
     <div class="calc-col">
       <button class="btn" style="width:100%;margin-top:20px;" onclick="calculateSWP()">Calculate</button>
     </div>
-  </div>
   <div class="calc-result" id="swpResult" style="display:none;">
     <p>Total Withdrawn: <b id="swpWithdrawn">₹0</b> | Final Value: <b id="swpFinal">₹0</b></p>
   </div>
@@ -801,26 +888,44 @@ Sometimes sudden problems come. If your money is invested safely, it can help yo
 
 </section>
 
-<!-- WEBSITE DEVELOPER PAGE -->
+<!-- WEBSITE DEVELOPER PAGE - ATTRACTIVE VERSION -->
 <section id="developerPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 
-<h1>About Website Developer</h1>
+<h1>👨‍💻 Website Developer</h1>
 
-<div class="list-box">
-<p><b>Name:</b> Rudransh Dhariwal</p>
-<p><b>Age:</b> 15 Years</p>
-<p><b>Contact:</b> 9165212111</p>
-<p><b>Email:</b> RumiDhariwal@gmail.com</p>
+<div class="dev-card">
+<h3>About Me</h3>
+<div class="dev-info"><span class="dev-icon">👤</span> <b>Name:</b> Rudransh Dhariwal</div>
+<div class="dev-info"><span class="dev-icon">🎂</span> <b>Age:</b> 15 Years</div>
+<div class="dev-info"><span class="dev-icon">📞</span> <b>Contact:</b> 9165212111</div>
+<div class="dev-info"><span class="dev-icon">📧</span> <b>Email:</b> RumiDhariwal@gmail.com</div>
+</div>
 
-<h3>Services & Pricing:</h3>
-<p>1. Complete Website - 5 Pages: ₹1000 only</p>
-<p>2. Small Changes/Updates: Free</p>
-<p>3. Major Changes: ₹200 per page</p>
+<div class="dev-card">
+<h3>💰 Services & Pricing</h3>
+<div class="price-tag">
+<strong>Complete Website - 5 Pages: ₹1000 only</strong><br>
+Full responsive design + SEO ready
+</div>
+<div class="price-tag">
+<strong>Small Changes/Updates: FREE</strong><br>
+Text changes, image updates, bug fixes
+</div>
+<div class="price-tag">
+<strong>Major Changes: ₹200 per page</strong><br>
+New sections, design changes, features
+</div>
+</div>
 
-<h3>Why Choose Me:</h3>
-<p>Young developer with passion for creating clean, mobile-friendly websites. Focus on fast delivery and client satisfaction.</p>
+<div class="dev-card">
+<h3>✨ Why Choose Me</h3>
+<p style="text-align:center;font-size:15px;line-height:1.8;">
+Young developer with passion for creating clean, mobile-friendly websites. 
+I focus on fast delivery, modern design, and 100% client satisfaction. 
+Let's build your dream website together! 🚀
+</p>
 </div>
 
 </section><!-- INVEST -->
@@ -1072,6 +1177,7 @@ Email: investmentkiduniya111@gmail.com</p>
 <div class="card" onclick="showPage('contraPage')">Contra Funds</div>
 <div class="card" onclick="showPage('indexPage')">Index / ETFs</div>
 <div class="card" onclick="showPage('overseasPage')">Overseas FoFs</div>
+</div>
 </section><!-- LARGE & MID CAP FUNDS -->
 <section id="largeMidPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
