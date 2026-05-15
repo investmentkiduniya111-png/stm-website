@@ -96,7 +96,7 @@ section * {
     z-index: 10;
 }
 
-/* WEBSITE DEVELOPER FLOAT BUTTON */
+/* WEBSITE DEVELOPER FLOAT BUTTON - FIXED */
 .developer-float-btn {
     position: fixed;
     bottom: 20px;
@@ -119,9 +119,6 @@ section * {
     background: #ff6b3d;
     box-shadow: 0 5px 20px rgba(255,123,84,0.6);
     transform: scale(1.05);
-}
-#developerPage ~ .developer-float-btn {
-    display: none;
 }
 
 .home-btn { 
@@ -587,7 +584,7 @@ section * {
 </div>
 
 <!-- WEBSITE DEVELOPER FLOAT BUTTON -->
-<button class="developer-float-btn" onclick="showPage('developerPage')">👨‍💻 Website Developer</button><!-- INTRO - ATTRACTIVE CARDS VERSION -->
+<button class="developer-float-btn" id="devBtn" onclick="showPage('developerPage')">👨‍💻 Website Developer</button><!-- INTRO - ATTRACTIVE CARDS VERSION -->
 <section id="intro">
 <div class="top-nav">
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
@@ -754,7 +751,7 @@ section * {
 
 </section>
 
-<!-- WEBSITE DEVELOPER PAGE - ALREADY ATTRACTIVE -->
+<!-- WEBSITE DEVELOPER PAGE -->
 <section id="developerPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -1452,6 +1449,13 @@ window.onload = function() {
 }
 
 function showPage(id){
+    // Fix: Hide developer button on developer page
+    if(id === 'developerPage') {
+        document.getElementById('devBtn').style.display = 'none';
+    } else {
+        document.getElementById('devBtn').style.display = 'block';
+    }
+
     document.querySelectorAll(".card").forEach(c=>c.classList.remove("active"));
     selected = "";
     localStorage.removeItem('selectedFund');
