@@ -194,9 +194,7 @@ section * {
 .top-nav .btn:hover {
     background: #ff7b54;
     transform: scale(1.05);
-}
-
-.home-nav {
+}.home-nav {
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -364,9 +362,7 @@ section * {
 .center-wrapper {
     text-align: center;
     width: 100%;
-}
-
-.popup-overlay {
+}.popup-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -543,6 +539,7 @@ section * {
 #intro { background-image:url("https://images.unsplash.com/photo-1579621970563-ebec7560ff3e"); }
 #home { background-image:url("https://images.unsplash.com/photo-1559526324-593bc073d938"); }
 #invest { background-image:url("https://images.unsplash.com/photo-1553729459-efe14ef6055d"); }
+#servicesPage { background-image:url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"); }
 #extraCapsPage { background-image:url("https://images.unsplash.com/photo-1551288049-bebda4e38f71"); }
 #largeMidPage { background-image:url("https://images.unsplash.com/photo-1554224155-6726b3ff858f"); }
 #multiCapPage { background-image:url("https://images.unsplash.com/photo-1526304640581-d334cdbbf45e"); }
@@ -584,9 +581,12 @@ section * {
 </div>
 
 <!-- WEBSITE DEVELOPER FLOAT BUTTON -->
-<button class="developer-float-btn" id="devBtn" onclick="showPage('developerPage')">👨‍💻 Website Developer</button><!-- INTRO - ATTRACTIVE CARDS VERSION -->
+<button class="developer-float-btn" id="devBtn" onclick="showPage('developerPage')">👨‍💻 Website Developer</button>
+
+<!-- INTRO - ATTRACTIVE CARDS VERSION -->
 <section id="intro">
-<div class="top-nav">
+<div class="top-nav" id="introNav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -638,14 +638,13 @@ section * {
 
 <button class="btn" onclick="showPage('home')">Next →</button>
 
-</section>
-
-<!-- HOME - ATTRACTIVE CALCULATOR CARDS -->
+</section><!-- HOME - ATTRACTIVE CALCULATOR CARDS -->
 <section id="home">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 
-<div class="home-nav">
+<div class="home-nav" id="homeNav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -676,6 +675,7 @@ section * {
     <div class="calc-col">
       <button class="btn" style="width:100%;margin-top:25px;" onclick="calculateSIP()">Calculate</button>
     </div>
+  </div>
   <div class="calc-result" id="sipResult" style="display:none;">
     <p>💰 Invested: <b id="investedAmt">₹0</b></p>
     <p>🎯 Returns: <b id="estReturns">₹0</b></p>
@@ -751,51 +751,33 @@ section * {
 
 </section>
 
-<!-- WEBSITE DEVELOPER PAGE -->
-<section id="developerPage">
+<!-- SERVICES PAGE -->
+<section id="servicesPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 
-<h1>👨‍💻 Website Developer</h1>
+<h1>⚙️ Our Services</h1>
 
-<div class="info-card">
-<h3>About Me</h3>
-<div class="info-point"><span class="info-icon">👤</span> <div><b>Name:</b> Rudransh Dhariwal</div></div>
-<div class="info-point"><span class="info-icon">🎂</span> <div><b>Age:</b> 15 Years</div></div>
-<div class="info-point"><span class="info-icon">📞</span> <div><b>Contact:</b> 9165212111</div></div>
-<div class="info-point"><span class="info-icon">📧</span> <div><b>Email:</b> RumiDhariwal@gmail.com</div></div>
-</div>
-
-<div class="info-card">
-<h3>💰 Services & Pricing</h3>
-<div class="highlight-box" style="margin:10px 0;">
-<strong style="color:#ffcc00;font-size:18px;">Complete Website - 5 Pages: ₹1000 only</strong><br>
-Full responsive design + SEO ready
-</div>
-<div class="highlight-box" style="margin:10px 0;">
-<strong style="color:#ffcc00;font-size:18px;">Small Changes/Updates: FREE</strong><br>
-Text changes, image updates, bug fixes
-</div>
-<div class="highlight-box" style="margin:10px 0;">
-<strong style="color:#ffcc00;font-size:18px;">Major Changes: ₹200 per page</strong><br>
-New sections, design changes, features
-</div>
+<div class="options">
+<div class="card" onclick="alert('Investment Portfolio service - Contact 9301450258')">📊 Investment Portfolio</div>
+<div class="card" onclick="alert('Insurance Policies service - Contact 9301450258')">🛡️ Insurances Policies</div>
+<div class="card" onclick="alert('Wealth Basket service - Contact 9301450258')">💰 Wealth Basket</div>
+<div class="card" onclick="alert('Targeted Investment service - Contact 9301450258')">🎯 Targeted Investment</div>
+<div class="card" onclick="alert('Tax Optimization service - Contact 9301450258')">💵 Tax Optimization</div>
 </div>
 
-<div class="info-card">
-<h3>✨ Why Choose Me</h3>
-<p style="text-align:center;font-size:15px;line-height:1.8;">
-Young developer with passion for creating clean, mobile-friendly websites. 
-I focus on fast delivery, modern design, and 100% client satisfaction. 
-Let's build your dream website together! 🚀
-</p>
+<div class="highlight-box" style="margin-top:30px;">
+<p style="margin:0;font-size:16px;"><b>📞 For all services contact: 9301450258</b></p>
 </div>
 
-</section><!-- INVEST - ATTRACTIVE CARDS -->
+</section>
+
+<!-- INVEST - ATTRACTIVE CARDS -->
 <section id="invest">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
-<div class="top-nav">
+<div class="top-nav" id="investNav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -809,9 +791,7 @@ Let's build your dream website together! 🚀
 <div class="card" onclick="showPage('largeCapPage')">🏢 Large Cap</div>
 <div class="card" onclick="showPage('extraCapsPage')">➕ For More Caps</div>
 </div>
-</section>
-
-<!-- RISK METER PAGE - ATTRACTIVE VERSION -->
+</section><!-- RISK METER PAGE - ATTRACTIVE VERSION -->
 <section id="riskPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -871,9 +851,7 @@ Let's build your dream website together! 🚀
     </div>
 </div>
 
-</section>
-
-<!-- RISK TABLE POPUP -->
+</section><!-- RISK TABLE POPUP -->
 <div class="popup-overlay" id="riskTablePopup">
     <div class="popup-box" style="max-width:650px;">
         <span class="popup-close-icon" onclick="closeRiskTablePopup()">&times;</span>
@@ -1026,7 +1004,7 @@ Let's build your dream website together! 🚀
 
 <div class="info-card">
 <h3>📞 Contact</h3>
-<div class="info-point"><span class="info-icon">👤</span> <div><b>Jay Kumar Dhariwal</b></div></div>
+<div class="info-point"><span class="info-icon">👤</span> <div><b>Jai Kumar Dhariwal</b></div></div>
 <div class="info-point"><span class="info-icon">📱</span> <div><b>Contact:</b> 9301450258</div></div>
 <div class="info-point"><span class="info-icon">📧</span> <div><b>Email:</b> investmentkiduniya111@gmail.com</div></div>
 </div>
@@ -1037,11 +1015,52 @@ Let's build your dream website together! 🚀
 
 </section>
 
-<!-- EXTRA CAPS -->
+<!-- WEBSITE DEVELOPER PAGE -->
+<section id="developerPage">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+
+<h1>👨‍💻 Website Developer</h1>
+
+<div class="info-card">
+<h3>About Me</h3>
+<div class="info-point"><span class="info-icon">👤</span> <div><b>Name:</b> Rudransh Dhariwal</div></div>
+<div class="info-point"><span class="info-icon">🎂</span> <div><b>Age:</b> 15 Years</div></div>
+<div class="info-point"><span class="info-icon">📞</span> <div><b>Contact:</b> 9165212111</div></div>
+<div class="info-point"><span class="info-icon">📧</span> <div><b>Email:</b> rumidhariwal@gmail.com</div></div>
+</div>
+
+<div class="info-card">
+<h3>💰 Services & Pricing</h3>
+<div class="highlight-box" style="margin:10px 0;">
+<strong style="color:#ffcc00;font-size:18px;">Complete Website - 5 Pages: ₹1000 only</strong><br>
+Full responsive design + SEO ready
+</div>
+<div class="highlight-box" style="margin:10px 0;">
+<strong style="color:#ffcc00;font-size:18px;">Small Changes/Updates: FREE</strong><br>
+Text changes, image updates, bug fixes
+</div>
+<div class="highlight-box" style="margin:10px 0;">
+<strong style="color:#ffcc00;font-size:18px;">Major Changes: ₹200 per page</strong><br>
+New sections, design changes, features
+</div>
+</div>
+
+<div class="info-card">
+<h3>✨ Why Choose Me</h3>
+<p style="text-align:center;font-size:15px;line-height:1.8;">
+Young developer with passion for creating clean, mobile-friendly websites. 
+I focus on fast delivery, modern design, and 100% client satisfaction. 
+Let's build your dream website together! 🚀
+</p>
+</div>
+
+</section><!-- EXTRA CAPS -->
 <section id="extraCapsPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
-<div class="top-nav">
+<div class="top-nav" id="extraCapsNav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1064,11 +1083,14 @@ Let's build your dream website together! 🚀
 <div class="card" onclick="showPage('indexPage')">📈 Index / ETFs</div>
 <div class="card" onclick="showPage('overseasPage')">🌍 Overseas FoFs</div>
 </div>
-</section><!-- LARGE & MID CAP FUNDS -->
+</section>
+
+<!-- LARGE & MID CAP FUNDS -->
 <section id="largeMidPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1090,6 +1112,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1111,6 +1134,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1132,6 +1156,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1153,6 +1178,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1174,6 +1200,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1195,6 +1222,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1216,6 +1244,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1237,6 +1266,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1258,6 +1288,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1279,6 +1310,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1300,6 +1332,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1321,6 +1354,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1342,6 +1376,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1363,6 +1398,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1384,6 +1420,7 @@ Let's build your dream website together! 🚀
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <div class="top-nav">
+    <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
     <button class="btn" onclick="showPage('riskPage')">📊 Risk Meter</button>
     <button class="btn" onclick="showPage('faqPage')">❓ FAQ</button>
     <button class="btn" onclick="showPage('aboutPage')">ℹ️ About Us</button>
@@ -1398,7 +1435,9 @@ Let's build your dream website together! 🚀
 </div>
 <div class="selected-box">No fund selected</div>
 <button class="btn" onclick="invest()">💰 Invest</button>
-</section><!-- INVEST POPUP -->
+</section>
+
+<!-- INVEST POPUP -->
 <div class="popup-overlay" id="investPopup">
     <div class="popup-box">
         <span class="popup-close-icon" onclick="closePopupCross()">&times;</span>
@@ -1449,8 +1488,10 @@ window.onload = function() {
 }
 
 function showPage(id){
-    // Fix: Hide developer button on developer page
-    if(id === 'developerPage') {
+    const hideNavPages = ['riskPage','faqPage','aboutPage','servicesPage','developerPage'];
+    
+    // Hide developer button on these pages
+    if(hideNavPages.includes(id)) {
         document.getElementById('devBtn').style.display = 'none';
     } else {
         document.getElementById('devBtn').style.display = 'block';
@@ -1675,19 +1716,19 @@ const fundMap = {
         "aggressive": "• Small Cap Funds<br>• Mid Cap Funds<br>• Sectoral Funds<br>• Thematic Funds<br>• Contra Funds"
     },
     "31-45": {
-        "conservative": "• Large Cap Funds<br>• Balanced Advantage Funds<br>• Debt Funds<br>• Index Funds",
+        "conservative": "• Large Cap Funds<br>• Balanced Adv.<br>• Debt Funds<br>• Index Funds",
         "moderate": "• Flexi Cap Funds<br>• Large & Mid Cap Funds<br>• Focused Funds<br>• Value Funds",
         "aggressive": "• Mid Cap Funds<br>• Small Cap Funds<br>• Contra Funds<br>• Thematic Funds"
     },
     "46-60": {
-        "conservative": "• Large Cap Funds<br>• Debt Funds<br>• Liquid Funds<br>• Index Funds<br>• Dividend Yield Funds",
-        "moderate": "• Balanced Advantage Funds<br>• Large & Mid Cap Funds<br>• Dividend Yield Funds<br>• Multi Cap Funds",
-        "aggressive": "• Flexi Cap Funds<br>• Multi Cap Funds<br>• Value Funds<br>• Large & Mid Cap Funds"
+        "conservative": "• Large Cap Funds<br>• Debt Funds<br>• Liquid Funds<br>• Index Funds<br>• Dividend Yield",
+        "moderate": "• Balanced Adv.<br>• Large & Mid Cap Funds<br>• Dividend Yield<br>• Multi Cap",
+        "aggressive": "• Flexi Cap Funds<br>• Multi Cap Funds<br>• Value Funds<br>• Large & Mid Cap"
     },
     "60+": {
         "conservative": "• Debt Funds<br>• Liquid Funds<br>• Large Cap Funds<br>• SWP Plans<br>• Index Funds",
-        "moderate": "• Balanced Advantage Funds<br>• Dividend Yield Funds<br>• Large Cap Funds<br>• Debt Funds",
-        "aggressive": "• Large & Mid Cap Funds<br>• Flexi Cap Funds<br>• Dividend Yield Funds"
+        "moderate": "• Balanced Adv.<br>• Dividend Yield<br>• Large Cap Funds<br>• Debt Funds",
+        "aggressive": "• Large & Mid Cap Funds<br>• Flexi Cap Funds<br>• Dividend Yield"
     }
 };
 
