@@ -791,7 +791,9 @@ section * {
 <div class="card" onclick="showPage('largeCapPage')">🏢 Large Cap</div>
 <div class="card" onclick="showPage('extraCapsPage')">➕ For More Caps</div>
 </div>
-</section><!-- RISK METER PAGE - ATTRACTIVE VERSION -->
+</section>
+
+<!-- RISK METER PAGE - ATTRACTIVE VERSION -->
 <section id="riskPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -826,6 +828,7 @@ section * {
                 <option value="high">Aggressive</option>
             </select>
         </div>
+    </div>
     <button class="btn" style="width:100%;margin-top:20px;font-size:16px;" onclick="calculateRisk()">🔍 Check My Risk Profile</button>
 
     <div class="risk-bar" id="riskBar" style="display:none;margin-top:25px;">
@@ -851,7 +854,9 @@ section * {
     </div>
 </div>
 
-</section><!-- RISK TABLE POPUP -->
+</section>
+
+<!-- RISK TABLE POPUP -->
 <div class="popup-overlay" id="riskTablePopup">
     <div class="popup-box" style="max-width:650px;">
         <span class="popup-close-icon" onclick="closeRiskTablePopup()">&times;</span>
@@ -894,9 +899,7 @@ section * {
 
         <button class="popup-btn popup-btn-close" style="width:100%;" onclick="closeRiskTablePopup()">Close</button>
     </div>
-</div>
-
-<!-- FAQ PAGE - ATTRACTIVE CARDS -->
+</div><!-- FAQ PAGE - ATTRACTIVE CARDS -->
 <section id="faqPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -1055,7 +1058,9 @@ Let's build your dream website together! 🚀
 </p>
 </div>
 
-</section><!-- EXTRA CAPS -->
+</section>
+
+<!-- EXTRA CAPS -->
 <section id="extraCapsPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -1083,9 +1088,7 @@ Let's build your dream website together! 🚀
 <div class="card" onclick="showPage('indexPage')">📈 Index / ETFs</div>
 <div class="card" onclick="showPage('overseasPage')">🌍 Overseas FoFs</div>
 </div>
-</section>
-
-<!-- LARGE & MID CAP FUNDS -->
+</section><!-- LARGE & MID CAP FUNDS -->
 <section id="largeMidPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -1430,14 +1433,11 @@ Let's build your dream website together! 🚀
 <div class="card" onclick="selectFund(this)">DSP World Gold Mining Overseas Equity Omni FoF</div>
 <div class="card" onclick="selectFund(this)">DSP World Mining Overseas Equity Omni FoF</div>
 <div class="card" onclick="selectFund(this)">DSP Global Clean Energy Overseas Equity Omni FoF</div>
-<div class="card" onclick="selectFund(this)">Edelweiss Greater China Equity Offshore Fund</div>
-<div class="card" onclick="selectFund(this)">Edelweiss Emerging Markets Oppo. Equity Offshore Fund</div>
+<div class="card" onclick="selectFund(this)">Edelweiss Greater China Equity Offshore Fund</div><div class="card" onclick="selectFund(this)">Edelweiss Emerging Markets Oppo. Equity Offshore Fund</div>
 </div>
 <div class="selected-box">No fund selected</div>
 <button class="btn" onclick="invest()">💰 Invest</button>
-</section>
-
-<!-- INVEST POPUP -->
+</section><!-- INVEST POPUP -->
 <div class="popup-overlay" id="investPopup">
     <div class="popup-box">
         <span class="popup-close-icon" onclick="closePopupCross()">&times;</span>
@@ -1463,7 +1463,6 @@ Let's build your dream website together! 🚀
             3. Enter password & Login<br>
             4. Type fund name in search
         </div>
-
         <div class="popup-btn-group">
             <button class="popup-btn popup-btn-copy" onclick="sendFundEmail()">📨 Send to Email & Continue</button>
             <button class="popup-btn popup-btn-close" onclick="closePopup()">Close</button>
@@ -1489,7 +1488,7 @@ window.onload = function() {
 
 function showPage(id){
     const hideNavPages = ['riskPage','faqPage','aboutPage','servicesPage','developerPage'];
-    
+
     // Hide developer button on these pages
     if(hideNavPages.includes(id)) {
         document.getElementById('devBtn').style.display = 'none';
@@ -1751,14 +1750,20 @@ function closeRiskTablePopup(){
     document.getElementById('riskTablePopup').classList.remove('active');
 }
 
+// FAQ FIX - ONLY CHANGE IN THIS CODE
 function toggleFAQ(el){
-let item = el.parentElement.parentElement;
+let item = el.closest('.faq-item');
 let answer = item.querySelector('.faq-answer');
-let symbol = item.querySelector('span:last-child');
+let symbol = item.querySelector('.faq-question span:last-child');
 if(answer.style.maxHeight){
     answer.style.maxHeight = null;
     symbol.innerText = '+';
 } else {
+    // Close all other FAQs first
+    document.querySelectorAll('.faq-answer').forEach(ans => {
+        ans.style.maxHeight = null;
+        ans.closest('.faq-item').querySelector('.faq-question span:last-child').innerText = '+';
+    });
     answer.style.maxHeight = answer.scrollHeight + "px";
     symbol.innerText = '-';
 }
