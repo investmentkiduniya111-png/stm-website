@@ -899,7 +899,7 @@ section * {
 
         <button class="popup-btn popup-btn-close" style="width:100%;" onclick="closeRiskTablePopup()">Close</button>
     </div>
-</div><!-- FAQ PAGE - ATTRACTIVE CARDS -->
+</div><!-- FAQ PAGE - FIXED VERSION -->
 <section id="faqPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -910,7 +910,7 @@ section * {
 <div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
     <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
         <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">💰</span> <span>What is a Mutual Fund?</span></span>
-        <span style="font-size:24px;font-weight:bold;">+</span>
+        <span class="faq-symbol" style="font-size:24px;font-weight:bold;">+</span>
     </div>
     <div class="faq-answer" style="padding:0 20px;">
         <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
@@ -922,7 +922,7 @@ section * {
 <div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
     <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
         <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">📊</span> <span>What is SIP?</span></span>
-        <span style="font-size:24px;font-weight:bold;">+</span>
+        <span class="faq-symbol" style="font-size:24px;font-weight:bold;">+</span>
     </div>
     <div class="faq-answer" style="padding:0 20px;">
         <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
@@ -934,7 +934,7 @@ section * {
 <div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
     <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
         <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">🛡️</span> <span>Is my money safe in Mutual Funds?</span></span>
-        <span style="font-size:24px;font-weight:bold;">+</span>
+        <span class="faq-symbol" style="font-size:24px;font-weight:bold;">+</span>
     </div>
     <div class="faq-answer" style="padding:0 20px;">
         <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
@@ -946,7 +946,7 @@ section * {
 <div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
     <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
         <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">💵</span> <span>What is ELSS and its tax benefit?</span></span>
-        <span style="font-size:24px;font-weight:bold;">+</span>
+        <span class="faq-symbol" style="font-size:24px;font-weight:bold;">+</span>
     </div>
     <div class="faq-answer" style="padding:0 20px;">
         <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
@@ -958,7 +958,7 @@ section * {
 <div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
     <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
         <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">🏧</span> <span>How to withdraw money from Mutual Funds?</span></span>
-        <span style="font-size:24px;font-weight:bold;">+</span>
+        <span class="faq-symbol" style="font-size:24px;font-weight:bold;">+</span>
     </div>
     <div class="faq-answer" style="padding:0 20px;">
         <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
@@ -1750,11 +1750,11 @@ function closeRiskTablePopup(){
     document.getElementById('riskTablePopup').classList.remove('active');
 }
 
-// FAQ FIX - ONLY CHANGE IN THIS CODE
+// FAQ FIX - SYMBOL CLASS USE KARKE
 function toggleFAQ(el){
 let item = el.closest('.faq-item');
 let answer = item.querySelector('.faq-answer');
-let symbol = item.querySelector('.faq-question span:last-child');
+let symbol = item.querySelector('.faq-symbol');
 if(answer.style.maxHeight){
     answer.style.maxHeight = null;
     symbol.innerText = '+';
@@ -1762,13 +1762,12 @@ if(answer.style.maxHeight){
     // Close all other FAQs first
     document.querySelectorAll('.faq-answer').forEach(ans => {
         ans.style.maxHeight = null;
-        ans.closest('.faq-item').querySelector('.faq-question span:last-child').innerText = '+';
+        ans.closest('.faq-item').querySelector('.faq-symbol').innerText = '+';
     });
     answer.style.maxHeight = answer.scrollHeight + "px";
     symbol.innerText = '-';
 }
 }
-
 function openContactForm(){
     window.open('https://prudentcorporate.com/BusinessCard/UserDetails/37343333', '_blank');
 }
