@@ -759,11 +759,11 @@ section * {
 <h1>⚙️ Our Services</h1>
 
 <div class="options">
-<div class="card" onclick="alert('Investment Portfolio service - Contact 9301450258')">📊 Investment Portfolio</div>
-<div class="card" onclick="alert('Insurance Policies service - Contact 9301450258')">🛡️ Insurances Policies</div>
-<div class="card" onclick="alert('Wealth Basket service - Contact 9301450258')">💰 Wealth Basket</div>
-<div class="card" onclick="alert('Targeted Investment service - Contact 9301450258')">🎯 Targeted Investment</div>
-<div class="card" onclick="alert('Tax Optimization service - Contact 9301450258')">💵 Tax Optimization</div>
+<div class="card" onclick="showPage('investmentPortfolioService')">📊 Investment Portfolio</div>
+<div class="card" onclick="showPage('insurancePoliciesService')">🛡️ Insurance Policies</div>
+<div class="card" onclick="showPage('wealthBasketService')">💰 Wealth Basket</div>
+<div class="card" onclick="showPage('targetedInvestmentService')">🎯 Targeted Investment</div>
+<div class="card" onclick="showPage('taxOptimizationService')">💵 Tax Optimization</div>
 </div>
 
 <div class="highlight-box" style="margin-top:30px;">
@@ -899,7 +899,7 @@ section * {
 
         <button class="popup-btn popup-btn-close" style="width:100%;" onclick="closeRiskTablePopup()">Close</button>
     </div>
-</div><!-- FAQ PAGE - FIXED VERSION -->
+</div><!-- FAQ PAGE - ATTRACTIVE CARDS -->
 <section id="faqPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -910,7 +910,7 @@ section * {
 <div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
     <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
         <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">💰</span> <span>What is a Mutual Fund?</span></span>
-        <span class="faq-symbol" style="font-size:24px;font-weight:bold;">+</span>
+        <span style="font-size:24px;font-weight:bold;">+</span>
     </div>
     <div class="faq-answer" style="padding:0 20px;">
         <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
@@ -922,7 +922,7 @@ section * {
 <div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
     <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
         <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">📊</span> <span>What is SIP?</span></span>
-        <span class="faq-symbol" style="font-size:24px;font-weight:bold;">+</span>
+        <span style="font-size:24px;font-weight:bold;">+</span>
     </div>
     <div class="faq-answer" style="padding:0 20px;">
         <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
@@ -934,7 +934,7 @@ section * {
 <div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
     <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
         <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">🛡️</span> <span>Is my money safe in Mutual Funds?</span></span>
-        <span class="faq-symbol" style="font-size:24px;font-weight:bold;">+</span>
+        <span style="font-size:24px;font-weight:bold;">+</span>
     </div>
     <div class="faq-answer" style="padding:0 20px;">
         <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
@@ -946,7 +946,7 @@ section * {
 <div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
     <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
         <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">💵</span> <span>What is ELSS and its tax benefit?</span></span>
-        <span class="faq-symbol" style="font-size:24px;font-weight:bold;">+</span>
+        <span style="font-size:24px;font-weight:bold;">+</span>
     </div>
     <div class="faq-answer" style="padding:0 20px;">
         <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
@@ -958,7 +958,7 @@ section * {
 <div class="faq-item info-card" style="cursor:pointer;margin:15px auto;">
     <div class="faq-question" onclick="toggleFAQ(this)" style="padding:20px;display:flex;justify-content:space-between;align-items:center;">
         <span style="display:flex;align-items:center;gap:10px;"><span style="font-size:24px;">🏧</span> <span>How to withdraw money from Mutual Funds?</span></span>
-        <span class="faq-symbol" style="font-size:24px;font-weight:bold;">+</span>
+        <span style="font-size:24px;font-weight:bold;">+</span>
     </div>
     <div class="faq-answer" style="padding:0 20px;">
         <div style="padding:0 0 20px 0;border-top:1px solid rgba(255,255,255,0.2);padding-top:15px;">
@@ -1437,6 +1437,222 @@ Let's build your dream website together! 🚀
 </div>
 <div class="selected-box">No fund selected</div>
 <button class="btn" onclick="invest()">💰 Invest</button>
+</section><!-- INVESTMENT PORTFOLIO SERVICE -->
+<section id="investmentPortfolioService">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+
+<h1>📊 INVESTMENT PORTFOLIO</h1>
+
+<div class="info-card" style="max-width:800px;">
+<p style="margin-bottom:20px;">Whenever you think of making investment, three things should come on top of your mind – <b>Risk Profiling, Products and Asset Allocation</b>. Along with these – cash-flow situations, investments already made, net-worth and are equally important to consider before deciding where should your hard-earned money get invested into.</p>
+
+<div class="info-point">
+    <span class="info-icon">📈</span>
+    <div>
+        <b>RISK PROFILING –</b><br>
+        Knowing ourselves well is more important than choosing products first. Risk Profiling helps in doing that. By carefully answering a well-researched set of questionnaires, your risk appetite can be known. This may not remain constant forever with changing dynamics of micro and macro-economic factors. Hence, it is important to go back and re-assess after regular interval.
+    </div>
+</div>
+
+<div class="info-point">
+    <span class="info-icon">💼</span>
+    <div>
+        <b>PRODUCTS –</b><br>
+        There are many investment products available in the market. The first check should always be that the product must be regulated by a govt. appointed regulatory body. Next, you must consider the suitability. All products are good in their own context and with a certain section of investors. Whether the same suits you or not, depends on your risk profile, investment horizon, liquidity needs and taxation aspect. Also, there are certain products which cater only to a particular section of society, e.g. resident individuals, senior citizens, girl child etc.
+    </div>
+</div>
+
+<div class="info-point">
+    <span class="info-icon">⚖️</span>
+    <div>
+        <b>ASSET ALLOCATION –</b><br>
+        We should not put all eggs in one basket i.e. not all our money in one single investment product or category. Distributing our investments into poorly correlated asset classes often saves us from big losses and is expected to generate a steady return. Asset allocation must be re-aligned or re-allocated at regular intervals. There are investment products available which aim to inculcate this very principle of asset allocation in the way they are managed. Otherwise, custom asset allocation can always be done.
+    </div>
+</div>
+</div>
+
+<div class="highlight-box" style="max-width:800px;">
+<p style="margin:0;font-size:15px;text-align:center;"><b>🎯 To Build An Affordable Wealth Creation Platform For The Clients Across The Industries</b></p>
+</div>
+
+<div class="info-card" style="max-width:800px;margin-top:20px;">
+<h3 style="text-align:center;margin-bottom:15px;">HEAD OFFICE</h3>
+<p style="text-align:center;">26-C Suraj Nagar Colony, Ujjain Pin - 456001</p>
+<h3 style="text-align:center;margin:15px 0;">Connect With Us</h3>
+<p style="text-align:center;">+91-9301450258<br>investmentkiduniya111@gmail.com</p>
+<div style="text-align:center;margin-top:20px;">
+<p><b>Jai Kumar Dhariwal</b><br>AMFI Registered Mutual Fund Distributor<br>ARN-352165</p>
+</div>
+</div>
+
+<div class="disclaimer">Disclaimer: Mutual funds and securities investments are subject to market risks. Past performance does not indicate future performance of the schemes of the fund. Please read offer documents carefully before investing.</div>
+
+<div class="footer-btn">
+<button class="btn" onclick="window.open('https://www.investmentkiduniya.com/contact', '_blank')">📞 Contact Us</button>
+</div>
+</section><!-- INSURANCE POLICIES SERVICE -->
+<section id="insurancePoliciesService">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+
+<h1>🛡️ INSURANCE POLICIES</h1>
+
+<div class="info-card" style="max-width:800px;">
+<p style="margin-bottom:20px;">Insurance is an important risk management tool that can protect you and your family from financial hardship caused by unfortunate events. We work with you to identify your risks and implement a cost-effective risk management program that has been developed with your specific circumstances and requirements in mind.</p>
+
+<h3 style="margin:20px 0;">Our insurance recommendations include Insurance For:</h3>
+<div class="info-point"><span class="info-icon">•</span><div>Life Insurance</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Health Insurance</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Personal Accident Insurance</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Critical Illness Cover</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Travel Insurance</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Motor Insurance</div></div>
+
+<p style="margin-top:20px;">If you have existing insurance policies, it is important to realize that both over-insuring and under-insuring can be costly. We will review all your existing policies and ensure that you are appropriately and adequately Insured.</p>
+
+<p style="margin-top:15px;">The loss of earnings and dent in wealth basket can be experienced with the death, disability, critical illness or long period of hospitalization and its clear impact is seen on the financial well-being. Planning for covering all such possible risks through insurance always turns out to be fruitful as well as satisfactory to policyholder.</p>
+
+<p style="margin-top:15px;">Instead of considering insurance planning as an absolute tool towards the overall financial planning, we often misunderstand it by calling an investment. Already where our daily lives remain unpredictable with uncertainties including an absolute loss of income, critical illness or even with disability, why not look forward for the attainment of absolute peace of mind through an effective insurance planning technique.</p>
+</div>
+
+<div class="highlight-box" style="max-width:800px;">
+<p style="margin:0;font-size:15px;text-align:center;"><b>🎯 To Build An Affordable Wealth Creation Platform For The Clients Across The Industries</b></p>
+</div>
+
+<div class="info-card" style="max-width:800px;margin-top:20px;">
+<h3 style="text-align:center;margin-bottom:15px;">HEAD OFFICE</h3>
+<p style="text-align:center;">26-C Suraj Nagar Colony, Ujjain Pin - 456001</p>
+<h3 style="text-align:center;margin:15px 0;">Connect With Us</h3>
+<p style="text-align:center;">+91-9301450258<br>investmentkiduniya111@gmail.com</p>
+<div style="text-align:center;margin-top:20px;">
+<p><b>Jai Kumar Dhariwal</b><br>AMFI Registered Mutual Fund Distributor<br>ARN-352165</p>
+</div>
+</div>
+
+<div class="disclaimer">Disclaimer: Mutual funds and securities investments are subject to market risks. Past performance does not indicate future performance of the schemes of the fund. Please read offer documents carefully before investing.</div>
+
+<div class="footer-btn">
+<button class="btn" onclick="window.open('https://www.investmentkiduniya.com/contact', '_blank')">📞 Contact Us</button>
+</div>
+</section><!-- WEALTH BASKET SERVICE -->
+<section id="wealthBasketService">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+
+<h1>💰 WEALTH BASKET</h1>
+
+<div class="info-card" style="max-width:800px;">
+<p style="margin-bottom:20px;">Wealth is an abundance of variable material resources. The meaning of wealth is not straightforward. Wealth is basically a person’s net worth. Wealth can be explained as assets minus liabilities.</p>
+
+<p style="margin-bottom:20px;">Handling wealth properly is a discipline that incorporates investment portfolio management and a number of other financial services. It is a professional service that encompasses all parts of a person’s financial life. Investors must have already accumulated a proper amount of wealth for wealth management strategies to be efficient and effective. This service is designed to focus on high-net worth customers. We use our experience in reviewing investment portfolio, estate planning, risk management practices to manage the holdings of high-net-worth client.</p>
+
+<p style="margin-bottom:20px;">This is an integrated process for helping clients manage their wealth. It involves huge and wide range of services that depend upon each investor but the condition is that services should include investment management, financial goal attainment strategies, retirement portfolio, estate planning, tax optimization, debt management and cash flow.</p>
+
+<h3 style="margin:20px 0;">Features and benefits:</h3>
+<div class="info-point"><span class="info-icon">•</span><div>Allows customer to review risk profiles and overall investment portfolio.</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Track holdings against model portfolios for returns.</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Tax optimization strategies and estate planning services are also provided.</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Specific products from PMS and AIF space are picked and chosen.</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Provides dynamic research across products and asset classes.</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>State-of-the-art technology platforms are made available to you.</div></div>
+</div>
+
+<div class="highlight-box" style="max-width:800px;">
+<p style="margin:0;font-size:15px;text-align:center;"><b>🎯 To Build An Affordable Wealth Creation Platform For The Clients Across The Industries</b></p>
+</div>
+
+<div class="info-card" style="max-width:800px;margin-top:20px;">
+<h3 style="text-align:center;margin-bottom:15px;">HEAD OFFICE</h3>
+<p style="text-align:center;">26-C Suraj Nagar Colony, Ujjain Pin - 456001</p>
+<h3 style="text-align:center;margin:15px 0;">Connect With Us</h3>
+<p style="text-align:center;">+91-9301450258<br>investmentkiduniya111@gmail.com</p>
+<div style="text-align:center;margin-top:20px;">
+<p><b>Jai Kumar Dhariwal</b><br>AMFI Registered Mutual Fund Distributor<br>ARN-352165</p>
+</div>
+</div>
+
+<div class="disclaimer">Disclaimer: Mutual funds and securities investments are subject to market risks. Past performance does not indicate future performance of the schemes of the fund. Please read offer documents carefully before investing.</div>
+
+<div class="footer-btn">
+<button class="btn" onclick="window.open('https://www.investmentkiduniya.com/contact', '_blank')">📞 Contact Us</button>
+</div>
+</section><!-- TARGETED INVESTMENT SERVICE -->
+<section id="targetedInvestmentService">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+
+<h1>🎯 TARGETED INVESTMENT</h1>
+
+<div class="info-card" style="max-width:800px;">
+<p style="margin-bottom:20px;">Making holistic investment choice is always preferred than making random investments. This can be achieved if every investment made is linked to a certain purpose. There are life’s goals which are critical to achieve. That includes – retirement fund accumulation, child’s higher education and marriage etc. Choice of products also depend a lot on the linked goal.</p>
+
+<p style="margin-bottom:20px;">The key to accumulate retirement fund in time is to start at earliest. It is not necessary to start with a bang. You can start with small amounts and increase it as your salary/income increases. Also, if you start early and you have time with you, you can gain advantage of high returns and maximize your investments by investing in equities or equity mutual funds.</p>
+
+<p style="margin-bottom:20px;">Child’s future goals changes in form and size every now and then. Hence it should be tackled by taking help from experts as and when needed. Making assumption about future cost of education involves considering inflation rate of education cost as realistic as possible. Higher studies within India or abroad costs differently based on stream of education and choice of institutes. Funding the cost of marriage of your children also requires prudent steps to be taken at the earliest. As such critical goals come close, the asset allocation should also change accordingly.</p>
+</div>
+
+<div class="highlight-box" style="max-width:800px;">
+<p style="margin:0;font-size:15px;text-align:center;"><b>🎯 To Build An Affordable Wealth Creation Platform For The Clients Across The Industries</b></p>
+</div>
+
+<div class="info-card" style="max-width:800px;margin-top:20px;">
+<h3 style="text-align:center;margin-bottom:15px;">HEAD OFFICE</h3>
+<p style="text-align:center;">26-C Suraj Nagar Colony, Ujjain Pin - 456001</p>
+<h3 style="text-align:center;margin:15px 0;">Connect With Us</h3>
+<p style="text-align:center;">+91-9301450258<br>investmentkiduniya111@gmail.com</p>
+<div style="text-align:center;margin-top:20px;">
+<p><b>Jai Kumar Dhariwal</b><br>AMFI Registered Mutual Fund Distributor<br>ARN-352165</p>
+</div>
+</div>
+
+<div class="disclaimer">Disclaimer: Mutual funds and securities investments are subject to market risks. Past performance does not indicate future performance of the schemes of the fund. Please read offer documents carefully before investing.</div>
+
+<div class="footer-btn">
+<button class="btn" onclick="window.open('https://www.investmentkiduniya.com/contact', '_blank')">📞 Contact Us</button>
+</div>
+</section><!-- TAX OPTIMIZATION SERVICE -->
+<section id="taxOptimizationService">
+<button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
+
+<h1>💰 TAX OPTIMIZATION</h1>
+
+<div class="info-card" style="max-width:800px;">
+<p style="margin-bottom:20px;">Tax planning involves optimizing your wealth creation and protecting your health, life and assets while aligning all these with existing provisions in our tax laws. This should also consider all your sources of income. Tax planning should never be done in isolation. Tax saving just for the sake of utilizing an available section often leads to bad financial decisions. Tax planning should always get linked to overall financial planning paradigm of yours. There is a subtle difference between paying minimum possible tax and saving maximum possible tax. We always prioritize the former.</p>
+
+<p style="margin-bottom:20px;">We make it a top priority to first calculate your tax liability and then look for ways to save tax while achieving various financial goals. Businesses and individuals pay the lowest amount of taxes allowable by law because we continually look for ways to minimize your taxes throughout the year and not just at the end of the year.</p>
+
+<p style="margin-bottom:20px;">With the growing complexity and diversity of available options for tax planning purposes, it is important that we critically examine and bring across to you all the options available in the present investment market to optimize post tax return and choose the most suitable for you so that you live a stress-free life.</p>
+
+<h3 style="margin:20px 0;">Some common tax saving options available for individuals can be exercised while planning the below mentioned activities:</h3>
+<div class="info-point"><span class="info-icon">•</span><div>Creation of long-term wealth</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Taking life insurance cover</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Opting for health insurance cover and health check-up</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Availing home loan for buying property</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Getting higher education financed for self/children through education loan</div></div>
+<div class="info-point"><span class="info-icon">•</span><div>Donating for a charitable cause.</div></div>
+</div>
+
+<div class="highlight-box" style="max-width:800px;">
+<p style="margin:0;font-size:15px;text-align:center;"><b>🎯 To Build An Affordable Wealth Creation Platform For The Clients Across The Industries</b></p>
+</div>
+
+<div class="info-card" style="max-width:800px;margin-top:20px;">
+<h3 style="text-align:center;margin-bottom:15px;">HEAD OFFICE</h3>
+<p style="text-align:center;">26-C Suraj Nagar Colony, Ujjain Pin - 456001</p>
+<h3 style="text-align:center;margin:15px 0;">Connect With Us</h3>
+<p style="text-align:center;">+91-9301450258<br>investmentkiduniya111@gmail.com</p>
+<div style="text-align:center;margin-top:20px;">
+<p><b>Jai Kumar Dhariwal</b><br>AMFI Registered Mutual Fund Distributor<br>ARN-352165</p>
+</div>
+</div>
+
+<div class="disclaimer">Disclaimer: Mutual funds and securities investments are subject to market risks. Past performance does not indicate future performance of the schemes of the fund. Please read offer documents carefully before investing.</div>
+
+<div class="footer-btn">
+<button class="btn" onclick="window.open('https://www.investmentkiduniya.com/contact', '_blank')">📞 Contact Us</button>
+</div>
 </section><!-- INVEST POPUP -->
 <div class="popup-overlay" id="investPopup">
     <div class="popup-box">
@@ -1750,11 +1966,11 @@ function closeRiskTablePopup(){
     document.getElementById('riskTablePopup').classList.remove('active');
 }
 
-// FAQ FIX - SYMBOL CLASS USE KARKE
+// FAQ FIX - ONLY CHANGE IN THIS CODE
 function toggleFAQ(el){
 let item = el.closest('.faq-item');
 let answer = item.querySelector('.faq-answer');
-let symbol = item.querySelector('.faq-symbol');
+let symbol = item.querySelector('.faq-question span:last-child');
 if(answer.style.maxHeight){
     answer.style.maxHeight = null;
     symbol.innerText = '+';
@@ -1762,12 +1978,13 @@ if(answer.style.maxHeight){
     // Close all other FAQs first
     document.querySelectorAll('.faq-answer').forEach(ans => {
         ans.style.maxHeight = null;
-        ans.closest('.faq-item').querySelector('.faq-symbol').innerText = '+';
+        ans.closest('.faq-item').querySelector('.faq-question span:last-child').innerText = '+';
     });
     answer.style.maxHeight = answer.scrollHeight + "px";
     symbol.innerText = '-';
 }
 }
+
 function openContactForm(){
     window.open('https://prudentcorporate.com/BusinessCard/UserDetails/37343333', '_blank');
 }
