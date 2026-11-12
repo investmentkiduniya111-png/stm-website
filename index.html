@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Investment Ki Duniya - SIP, Mutual Fund & Investment Guide</title>
-<meta name="description" content="Investment Ki Duniya - Learn Mutual Funds, SIP, Lumpsum, SWP calculators, Risk Profile and Best Funds. Invest Today, For A Brighter Tomorrow!">
+  <link rel="icon" type="image/jpeg" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj81UIV7K6TV4-sR_Wqq9VAKN3ltKcmPk0n57FDo8A7H8wwzALm2lmvXs5_wtnZ_VmDwLjFPnntMOFiJ9IbfeywHgvVXjyHWTqjipSnaq4em1QqS6MC3A76R2NBldFuzYQIbkyuttWvgTjEAII2t7JrudDusUD5B24ldKjqOzKoXjPa8tw87RNRccQMsdAK/s1600/logo.jpeg"/>
+<link rel="apple-touch-icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj81UIV7K6TV4-sR_Wqq9VAKN3ltKcmPk0n57FDo8A7H8wwzALm2lmvXs5_wtnZ_VmDwLjFPnntMOFiJ9IbfeywHgvVXjyHWTqjipSnaq4em1QqS6MC3A76R2NBldFuzYQIbkyuttWvgTjEAII2t7JrudDusUD5B24ldKjqOzKoXjPa8tw87RNRccQMsdAK/s1600/logo.jpeg"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Investment Ki Duniya - SIP, Mutual Fund &amp; Investment Guide</title>
+<meta name="description" content="Investment Ki Duniya - Learn Mutual Funds, SIP, Lumpsum, SWP calculators, Risk Profile and Best Funds. Invest Today, For A Brighter Tomorrow!" />
 <style>
+/*<![CDATA[*/
 body { margin: 0; font-family: Arial, sans-serif; text-align: center; color: white; }
 h1, h2, h3 { font-family: Georgia, serif; letter-spacing: 0.5px; }
 section { min-height: 100vh; display: none; flex-direction: column; justify-content: center; align-items: center; background-size: cover; background-position: center; position: relative; padding: 20px; box-sizing: border-box; }
@@ -13,12 +16,15 @@ section { min-height: 100vh; display: none; flex-direction: column; justify-cont
 section::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
 section * { position: relative; z-index: 1; }
 .company-header { position: fixed; top: 15px; left: 50%; transform: translateX(-50%); z-index: 9999; background: rgba(0,0,0,0.4); padding: 10px 30px; border-radius: 30px; }
+  .logo-img{width:45px;height:45px;border-radius:50%;object-fit:cover;margin-right:8px;vertical-align:middle;border:2px solid #fff;}
 .company-text { font-family: Georgia, serif; font-size: 22px; font-weight: bold; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.5); letter-spacing: 1px; }
 .btn { padding: 12px 25px; margin: 10px; border: none; border-radius: 25px; background: #00c896; color: white; cursor: pointer; font-size: 14px; font-family: Georgia, serif; font-weight: bold; letter-spacing: 0.5px; box-shadow: 0 3px 10px rgba(0,200,150,0.3); transition: all 0.3s ease; }
 .btn:hover { background: #00a67d; box-shadow: 0 5px 15px rgba(0,200,150,0.5); transform: translateY(-2px); }
 .back-btn { position: absolute; top: 20px; left: 20px; background:#ffffff30; box-shadow: 0 3px 10px rgba(255,255,255,0.2); z-index: 10; }
-.developer-float-btn { position: fixed; bottom: 20px; right: 20px; background:#ff7b54; padding: 15px 25px; border-radius: 25px; font-size: 14px; font-family: Georgia, serif; font-weight: bold; letter-spacing: 0.5px; box-shadow: 0 4px 15px rgba(255,123,84,0.4); z-index: 9999; border: none; color: white; cursor: pointer; transition: all 0.3s ease; }
+.developer-float-btn { position: fixed; bottom: 15px; right: 15px; background:#ff7b54; padding: 8px 13px; border-radius: 20px; font-size: 11px; font-family: Georgia, serif; font-weight: bold; letter-spacing: 0.5px; box-shadow: 0 3px 10px rgba(255,123,84,0.4); z-index: 9998; border: none; color: white; cursor: pointer; transition: all 0.3s ease; }
 .developer-float-btn:hover { background: #ff6b3d; box-shadow: 0 5px 20px rgba(255,123,84,0.6); transform: scale(1.05); }
+.whatsapp-float-btn { position: fixed; bottom: 15px; left: 15px; background:#25D366; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 9998; }
+.whatsapp-float-btn:hover { transform: scale(1.08); }
 .home-btn { position: absolute; top: 20px; right: 20px; background:#ff7b54; box-shadow: 0 3px 10px rgba(255,123,84,0.4); z-index: 10; }
 .info-card { background: linear-gradient(135deg, rgba(0,200,150,0.3) 0%, rgba(0,150,200,0.3) 100%); padding: 20px; border-radius: 15px; max-width: 700px; margin: 15px auto; text-align: left; border: 2px solid rgba(0,200,150,0.5); box-shadow: 0 5px 20px rgba(0,200,150,0.3); transition: all 0.3s ease; }
 .info-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,200,150,0.5); }
@@ -90,13 +96,14 @@ a:hover { color: white; }
     h1 { font-size: 22px; padding: 0 10px; margin-top: 20px; }
     h2 { font-size: 20px; }
     h3 { font-size: 18px; }
-    section { padding: 70px 10px 15px 10px; justify-content: flex-start; }
+    section { padding: 70px 10px 90px 10px; justify-content: flex-start; }
     .company-header { top: 10px; padding: 8px 20px; }
     .company-text { font-size: 18px; }
     .btn { padding: 10px 18px; font-size: 12px; margin: 5px; }
     .back-btn, .home-btn { top: 10px; padding: 8px 15px; font-size: 11px; }
     .back-btn { left: 10px; }
-    .developer-float-btn { bottom: 15px; right: 15px; padding: 12px 20px; font-size: 12px; }
+    .developer-float-btn { bottom: 12px; right: 12px; padding: 7px 11px; font-size: 10px; }
+    .whatsapp-float-btn { bottom: 12px; left: 12px; width: 50px; height: 50px; font-size: 24px; }
     .home-btn { right: 10px; }
     .top-nav { margin: 15px 0; gap: 5px; }
     .top-nav .btn, .home-nav .btn { padding: 8px 12px; font-size: 11px; margin: 3px; }
@@ -148,17 +155,79 @@ a:hover { color: white; }
 #faqPage { background-image:url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85"); }
 #aboutPage { background-image:url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"); }
 #developerPage { background-image:url("https://images.unsplash.com/photo-1498050108023-c5249f4df085"); }
+/*]]>*/
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
+//<![CDATA[
 (function(){ emailjs.init("5gV3IILh9LSNkYAdW"); })();
+//]]>
 </script>
-</head>
-<body>
-<div class="company-header"><span class="company-text">Investment Ki Duniya</span></div>
-<button class="developer-float-btn" id="devBtn" onclick="showPage('developerPage')">👨‍💻 Website Developer</button>
+  <style>
+#navbar-iframe { display: none !important; }
+</style>
+<link rel="me" href="https://www.blogger.com/profile/11115284273647034305" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
 
-<!-- INTRO -->
+div.b-mobile {display:none;}
+</style>
+<style>
+#navbar-iframe, #navbar, .navbar {
+  display: none !important;
+  height: 0 !important;
+}
+body {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+</style>
+<link rel="me" href="https://www.blogger.com/profile/11115284273647034305" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+<!-- --><style type="text/css">@import url(//www.blogger.com/static/v1/v-css/navbar/3334278262-classic.css);
+div.b-mobile {display:none;}
+</style>
+
+</head>
+<body><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar/8056165709670496226?origin\x3dhttps://www.investmentkiduniya.com',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+
+
+<div class="company-header"><img class="logo-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj81UIV7K6TV4-sR_Wqq9VAKN3ltKcmPk0n57FDo8A7H8wwzALm2lmvXs5_wtnZ_VmDwLjFPnntMOFiJ9IbfeywHgvVXjyHWTqjipSnaq4em1QqS6MC3A76R2NBldFuzYQIbkyuttWvgTjEAII2t7JrudDusUD5B24ldKjqOzKoXjPa8tw87RNRccQMsdAK/s1600/logo.jpeg"/><span class="company-text">Investment Ki Duniya</span></div>
+<button class="developer-float-btn" id="devBtn" onclick="showPage('developerPage')">👨‍💻 Website Developer</button>
+<a class="whatsapp-float-btn" href="https://wa.me/919301450258?text=Mujhe%20SIP%20ke%20baare%20me%20jaanna%20hai" target="_blank">💬</a>
+    <!-- INTRO -->
 <section id="intro">
 <div class="top-nav">
     <button class="btn" onclick="showPage('servicesPage')">⚙️ Services</button>
@@ -168,12 +237,12 @@ a:hover { color: white; }
 </div>
 <h1>💰 Why Should You Invest?</h1>
 <div class="info-card">
-<div class="info-point"><span class="info-icon">📈</span><div><b>First, to grow your money:</b><br>Money kept at home stays the same. But money invested in a bank FD, PPF, or Mutual Fund grows slowly with time just like a plant grows when you water it.</div></div>
-<div class="info-point"><span class="info-icon">🎯</span><div><b>Second, to reach your dreams:</b><br>Want a new cycle, laptop, or college in the future? Investment helps your savings become big enough for big dreams.</div></div>
-<div class="info-point"><span class="info-icon">🛡️</span><div><b>Third, to be ready for emergencies:</b><br>Sometimes sudden problems come. If your money is invested safely, it can help you and your family in tough times.</div></div>
+<div class="info-point"><span class="info-icon">📈</span><div><b>First, to grow your money:</b><br />Money kept at home stays the same. But money invested in a bank FD, PPF, or Mutual Fund grows slowly with time just like a plant grows when you water it.</div></div>
+<div class="info-point"><span class="info-icon">🎯</span><div><b>Second, to reach your dreams:</b><br />Want a new cycle, laptop, or college in the future? Investment helps your savings become big enough for big dreams.</div></div>
+<div class="info-point"><span class="info-icon">🛡️</span><div><b>Third, to be ready for emergencies:</b><br />Sometimes sudden problems come. If your money is invested safely, it can help you and your family in tough times.</div></div>
 </div>
 <div class="highlight-box"><h2 style="margin:0 0 10px 0;font-size:22px;">✨ And the best part?</h2><p style="margin:0;font-size:16px;">You don't need lakhs to start.</p></div>
-<div class="info-card"><div class="info-point"><span class="info-icon">💡</span><div><b>Even ₹100 a month can become thousands in a few years</b> - that is the magic of investing early!<br><br>So don't just save, invest!<br><b style="color:#ffcc00;">Invest today, for a brighter tomorrow!</b></div></div></div>
+<div class="info-card"><div class="info-point"><span class="info-icon">💡</span><div><b>Even ₹100 a month can become thousands in a few years</b> - that is the magic of investing early!<br /><br />So don't just save, invest!<br /><b style="color:#ffcc00;">Invest today, for a brighter tomorrow!</b></div></div></div>
 <button class="btn" onclick="showPage('home')">Next →</button>
 </section>
 
@@ -192,9 +261,9 @@ a:hover { color: white; }
 <div class="calc-card">
   <h3>📊 SIP Calculator</h3>
   <div class="calc-row">
-    <div class="calc-col"><label>💵 Monthly Investment ₹</label><input type="number" id="sipAmount" value="5000" min="0"></div>
-    <div class="calc-col"><label>📈 Expected Return %</label><input type="number" id="sipRate" value="12" min="0"></div>
-    <div class="calc-col"><label>📅 Time Period (Years)</label><input type="number" id="sipYears" value="10" min="1"></div>
+    <div class="calc-col"><label>💵 Monthly Investment ₹</label><input type="number" id="sipAmount" value="5000" min="0" /></div>
+    <div class="calc-col"><label>📈 Expected Return %</label><input type="number" id="sipRate" value="12" min="0" /></div>
+    <div class="calc-col"><label>📅 Time Period (Years)</label><input type="number" id="sipYears" value="10" min="1" /></div>
     <div class="calc-col"><button class="btn" style="width:100%;margin-top:25px;" onclick="calculateSIP()">Calculate</button></div>
   </div>
   <div class="calc-result" id="sipResult" style="display:none;">
@@ -206,9 +275,9 @@ a:hover { color: white; }
 <div class="calc-card">
   <h3>💎 Lumpsum Calculator</h3>
   <div class="calc-row">
-    <div class="calc-col"><label>💵 Investment Amount ₹</label><input type="number" id="lumpAmount" value="100000" min="0"></div>
-    <div class="calc-col"><label>📈 Expected Return %</label><input type="number" id="lumpRate" value="12" min="0"></div>
-    <div class="calc-col"><label>📅 Time Period (Years)</label><input type="number" id="lumpYears" value="10" min="1"></div>
+    <div class="calc-col"><label>💵 Investment Amount ₹</label><input type="number" id="lumpAmount" value="100000" min="0" /></div>
+    <div class="calc-col"><label>📈 Expected Return %</label><input type="number" id="lumpRate" value="12" min="0" /></div>
+    <div class="calc-col"><label>📅 Time Period (Years)</label><input type="number" id="lumpYears" value="10" min="1" /></div>
     <div class="calc-col"><button class="btn" style="width:100%;margin-top:25px;" onclick="calculateLumpsum()">Calculate</button></div>
   </div>
   <div class="calc-result" id="lumpResult" style="display:none;">
@@ -220,10 +289,10 @@ a:hover { color: white; }
 <div class="calc-card">
   <h3>🏧 SWP Calculator</h3>
   <div class="calc-row">
-    <div class="calc-col"><label>💵 Total Investment ₹</label><input type="number" id="swpAmount" value="1000000" min="0"></div>
-    <div class="calc-col"><label>💸 Withdrawal/Month ₹</label><input type="number" id="swpWithdraw" value="8000" min="0"></div>
-    <div class="calc-col"><label>📈 Expected Return %</label><input type="number" id="swpRate" value="8" min="0"></div>
-    <div class="calc-col"><label>📅 Time Period (Years)</label><input type="number" id="swpYears" value="15" min="1"></div>
+    <div class="calc-col"><label>💵 Total Investment ₹</label><input type="number" id="swpAmount" value="1000000" min="0" /></div>
+    <div class="calc-col"><label>💸 Withdrawal/Month ₹</label><input type="number" id="swpWithdraw" value="8000" min="0" /></div>
+    <div class="calc-col"><label>📈 Expected Return %</label><input type="number" id="swpRate" value="8" min="0" /></div>
+    <div class="calc-col"><label>📅 Time Period (Years)</label><input type="number" id="swpYears" value="15" min="1" /></div>
     <div class="calc-col"><button class="btn" style="width:100%;margin-top:25px;" onclick="calculateSWP()">Calculate</button></div>
   </div>
   <div class="calc-result" id="swpResult" style="display:none;">
@@ -302,10 +371,10 @@ a:hover { color: white; }
         <div style="background:rgba(0,0,0,0.3);padding:15px;border-radius:12px;margin:15px 0;text-align:left;max-height:400px;overflow-y:auto;">
             <table class="risk-table">
                 <tr style="background:linear-gradient(135deg, rgba(0,200,150,0.4) 0%, rgba(0,150,200,0.4) 100%);position:sticky;top:0;"><th>Age Group</th><th>🟢 Conservative</th><th>🟡 Moderate</th><th>🔴 Aggressive</th></tr>
-                <tr><td style="font-weight:bold;">18-30</td><td>Large Cap<br>Index Funds<br>Debt Funds<br>Liquid Funds</td><td>Flexi Cap<br>Large &amp; Mid Cap<br>Multi Cap<br>Focused Funds</td><td>Small Cap<br>Mid Cap<br>Sectoral Funds<br>Thematic Funds<br>Contra Funds</td></tr>
-                <tr><td style="font-weight:bold;">31-45</td><td>Large Cap<br>Balanced Adv.<br>Debt Funds<br>Index Funds</td><td>Flexi Cap<br>Large &amp; Mid Cap<br>Focused Funds<br>Value Funds</td><td>Mid Cap<br>Small Cap<br>Contra Funds<br>Thematic Funds</td></tr>
-                <tr><td style="font-weight:bold;">46-60</td><td>Large Cap<br>Debt Funds<br>Liquid Funds<br>Index Funds<br>Dividend Yield</td><td>Balanced Adv.<br>Large &amp; Mid Cap<br>Dividend Yield<br>Multi Cap</td><td>Flexi Cap<br>Multi Cap<br>Value Funds<br>Large &amp; Mid Cap</td></tr>
-                <tr><td style="font-weight:bold;">60+</td><td>Debt Funds<br>Liquid Funds<br>Large Cap<br>SWP Plans<br>Index Funds</td><td>Balanced Adv.<br>Dividend Yield<br>Large Cap<br>Debt Funds</td><td>Large &amp; Mid Cap<br>Flexi Cap<br>Dividend Yield</td></tr>
+                <tr><td style="font-weight:bold;">18-30</td><td>Large Cap<br />Index Funds<br />Debt Funds<br />Liquid Funds</td><td>Flexi Cap<br />Large &amp; Mid Cap<br />Multi Cap<br />Focused Funds</td><td>Small Cap<br />Mid Cap<br />Sectoral Funds<br />Thematic Funds<br />Contra Funds</td></tr>
+                <tr><td style="font-weight:bold;">31-45</td><td>Large Cap<br />Balanced Adv.<br />Debt Funds<br />Index Funds</td><td>Flexi Cap<br />Large &amp; Mid Cap<br />Focused Funds<br />Value Funds</td><td>Mid Cap<br />Small Cap<br />Contra Funds<br />Thematic Funds</td></tr>
+                <tr><td style="font-weight:bold;">46-60</td><td>Large Cap<br />Debt Funds<br />Liquid Funds<br />Index Funds<br />Dividend Yield</td><td>Balanced Adv.<br />Large &amp; Mid Cap<br />Dividend Yield<br />Multi Cap</td><td>Flexi Cap<br />Multi Cap<br />Value Funds<br />Large &amp; Mid Cap</td></tr>
+                <tr><td style="font-weight:bold;">60+</td><td>Debt Funds<br />Liquid Funds<br />Large Cap<br />SWP Plans<br />Index Funds</td><td>Balanced Adv.<br />Dividend Yield<br />Large Cap<br />Debt Funds</td><td>Large &amp; Mid Cap<br />Flexi Cap<br />Dividend Yield</td></tr>
             </table>
         </div>
         <button class="popup-btn popup-btn-close" style="width:100%;" onclick="closeRiskTablePopup()">Close</button>
@@ -359,11 +428,10 @@ a:hover { color: white; }
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 <h1>👨‍💻 Website Developer</h1>
 <div class="info-card"><h3>About Me</h3><div class="info-point"><span class="info-icon">👤</span><div><b>Name:</b> Rudransh Dhariwal</div></div><div class="info-point"><span class="info-icon">🎂</span><div><b>Age:</b> 15 Years</div></div><div class="info-point"><span class="info-icon">📞</span><div><b>Contact:</b> <a href="tel:+919165212111">9165212111</a></div></div><div class="info-point"><span class="info-icon">📧</span><div><b>Email:</b> <a href="mailto:rumidhariwal@gmail.com">rumidhariwal@gmail.com</a></div></div></div>
-<div class="info-card"><h3>💰 Services &amp; Pricing</h3><div class="highlight-box" style="margin:10px 0;"><strong style="color:#ffcc00;font-size:18px;">Complete Website - 5 Pages: ₹1000 only</strong><br>Full responsive design + SEO ready</div><div class="highlight-box" style="margin:10px 0;"><strong style="color:#ffcc00;font-size:18px;">Small Changes/Updates: FREE</strong><br>Text changes, image updates, bug fixes</div><div class="highlight-box" style="margin:10px 0;"><strong style="color:#ffcc00;font-size:18px;">Major Changes: ₹200 per page</strong><br>New sections, design changes, features</div></div>
+<div class="info-card"><h3>💰 Services &amp; Pricing</h3><div class="highlight-box" style="margin:10px 0;"><strong style="color:#ffcc00;font-size:18px;">Complete Website - 5 Pages: ₹1000 only</strong><br />Full responsive design + SEO ready</div><div class="highlight-box" style="margin:10px 0;"><strong style="color:#ffcc00;font-size:18px;">Small Changes/Updates: FREE</strong><br />Text changes, image updates, bug fixes</div><div class="highlight-box" style="margin:10px 0;"><strong style="color:#ffcc00;font-size:18px;">Major Changes: ₹200 per page</strong><br />New sections, design changes, features</div></div>
 <div class="info-card"><h3>✨ Why Choose Me</h3><p style="text-align:center;font-size:15px;line-height:1.8;">Young developer with passion for creating clean, mobile-friendly websites. I focus on fast delivery, modern design, and 100% client satisfaction. Let's build your dream website together! 🚀</p></div>
 </section>
-
-<!-- EXTRA CAPS -->
+  <!-- EXTRA CAPS -->
 <section id="extraCapsPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -384,7 +452,9 @@ a:hover { color: white; }
 <div class="card" onclick="showPage('indexPage')">📈 Index / ETFs</div>
 <div class="card" onclick="showPage('overseasPage')">🌍 Overseas FoFs</div>
 </div>
-</section><!-- LARGE & MID CAP FUNDS -->
+</section>
+
+<!-- LARGE & MID CAP FUNDS -->
 <section id="largeMidPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -471,8 +541,7 @@ a:hover { color: white; }
 <div class="selected-box">No fund selected</div>
 <button class="btn" onclick="invest()">💰 Invest</button>
 </section>
-
-<!-- LARGE CAP FUNDS -->
+  <!-- LARGE CAP FUNDS -->
 <section id="largeCapPage">
 <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
 <button class="btn home-btn" onclick="goHome()">🏠 Home</button>
@@ -743,17 +812,17 @@ a:hover { color: white; }
 <h1>📊 INVESTMENT PORTFOLIO</h1>
 <div class="info-card" style="max-width:800px;">
 <p style="margin-bottom:20px;">Whenever you think of making investment, three things should come on top of your mind – <b>Risk Profiling, Products and Asset Allocation</b>. Along with these – cash-flow situations, investments already made, net-worth and are equally important to consider before deciding where should your hard-earned money get invested into.</p>
-<div class="info-point"><span class="info-icon">📈</span><div><b>RISK PROFILING –</b><br>Knowing ourselves well is more important than choosing products first. Risk Profiling helps in doing that. By carefully answering a well-researched set of questionnaires, your risk appetite can be known. This may not remain constant forever with changing dynamics of micro and macro-economic factors. Hence, it is important to go back and re-assess after regular interval.</div></div>
-<div class="info-point"><span class="info-icon">💼</span><div><b>PRODUCTS –</b><br>There are many investment products available in the market. The first check should always be that the product must be regulated by a govt. appointed regulatory body. Next, you must consider the suitability. All products are good in their own context and with a certain section of investors. Whether the same suits you or not, depends on your risk profile, investment horizon, liquidity needs and taxation aspect. Also, there are certain products which cater only to a particular section of society, e.g. resident individuals, senior citizens, girl child etc.</div></div>
-<div class="info-point"><span class="info-icon">⚖️</span><div><b>ASSET ALLOCATION –</b><br>We should not put all eggs in one basket i.e. not all our money in one single investment product or category. Distributing our investments into poorly correlated asset classes often saves us from big losses and is expected to generate a steady return. Asset allocation must be re-aligned or re-allocated at regular intervals. There are investment products available which aim to inculcate this very principle of asset allocation in the way they are managed. Otherwise, custom asset allocation can always be done.</div></div>
+<div class="info-point"><span class="info-icon">📈</span><div><b>RISK PROFILING –</b><br />Knowing ourselves well is more important than choosing products first. Risk Profiling helps in doing that. By carefully answering a well-researched set of questionnaires, your risk appetite can be known. This may not remain constant forever with changing dynamics of micro and macro-economic factors. Hence, it is important to go back and re-assess after regular interval.</div></div>
+<div class="info-point"><span class="info-icon">💼</span><div><b>PRODUCTS –</b><br />There are many investment products available in the market. The first check should always be that the product must be regulated by a govt. appointed regulatory body. Next, you must consider the suitability. All products are good in their own context and with a certain section of investors. Whether the same suits you or not, depends on your risk profile, investment horizon, liquidity needs and taxation aspect. Also, there are certain products which cater only to a particular section of society, e.g. resident individuals, senior citizens, girl child etc.</div></div>
+<div class="info-point"><span class="info-icon">⚖️</span><div><b>ASSET ALLOCATION –</b><br />We should not put all eggs in one basket i.e. not all our money in one single investment product or category. Distributing our investments into poorly correlated asset classes often saves us from big losses and is expected to generate a steady return. Asset allocation must be re-aligned or re-allocated at regular intervals. There are investment products available which aim to inculcate this very principle of asset allocation in the way they are managed. Otherwise, custom asset allocation can always be done.</div></div>
 </div>
 <div class="highlight-box" style="max-width:800px;"><p style="margin:0;font-size:15px;text-align:center;"><b>🎯 To Build An Affordable Wealth Creation Platform For The Clients Across The Industries</b></p></div>
 <div class="info-card" style="max-width:800px;margin-top:20px;">
 <h3 style="text-align:center;margin-bottom:15px;">HEAD OFFICE</h3>
 <p style="text-align:center;">26-C Suraj Nagar Colony, Ujjain Pin - 456001</p>
 <h3 style="text-align:center;margin:15px 0;">Connect With Us</h3>
-<p style="text-align:center;"><a href="tel:+919301450258">+91-9301450258</a><br><a href="mailto:investmentkiduniya111@gmail.com">investmentkiduniya111@gmail.com</a></p>
-<div style="text-align:center;margin-top:20px;"><p><b>Jai Kumar Dhariwal</b><br>AMFI Registered Mutual Fund Distributor<br>ARN-352165</p></div>
+<p style="text-align:center;"><a href="tel:+919301450258">+91-9301450258</a><br /><a href="mailto:investmentkiduniya111@gmail.com">investmentkiduniya111@gmail.com</a></p>
+<div style="text-align:center;margin-top:20px;"><p><b>Jai Kumar Dhariwal</b><br />AMFI Registered Mutual Fund Distributor<br />ARN-352165</p></div>
 </div>
 <div class="disclaimer">Disclaimer: Mutual funds and securities investments are subject to market risks. Past performance does not indicate future performance of the schemes of the fund. Please read offer documents carefully before investing.</div>
 <div class="footer-btn"><button class="btn" onclick="window.open('https://prudentcorporate.com/BusinessCard/UserDetails/37343333')">📞 Contact Us</button></div>
@@ -782,8 +851,8 @@ a:hover { color: white; }
 <h3 style="text-align:center;margin-bottom:15px;">HEAD OFFICE</h3>
 <p style="text-align:center;">26-C Suraj Nagar Colony, Ujjain Pin - 456001</p>
 <h3 style="text-align:center;margin:15px 0;">Connect With Us</h3>
-<p style="text-align:center;"><a href="tel:+919301450258">+91-9301450258</a><br><a href="mailto:investmentkiduniya111@gmail.com">investmentkiduniya111@gmail.com</a></p>
-<div style="text-align:center;margin-top:20px;"><p><b>Jai Kumar Dhariwal</b><br>AMFI Registered Mutual Fund Distributor<br>ARN-352165</p></div>
+<p style="text-align:center;"><a href="tel:+919301450258">+91-9301450258</a><br /><a href="mailto:investmentkiduniya111@gmail.com">investmentkiduniya111@gmail.com</a></p>
+<div style="text-align:center;margin-top:20px;"><p><b>Jai Kumar Dhariwal</b><br />AMFI Registered Mutual Fund Distributor<br />ARN-352165</p></div>
 </div>
 <div class="disclaimer">Disclaimer: Mutual funds and securities investments are subject to market risks. Past performance does not indicate future performance of the schemes of the fund. Please read offer documents carefully before investing.</div>
 <div class="footer-btn"><button class="btn" onclick="window.open('https://prudentcorporate.com/BusinessCard/UserDetails/37343333')">📞 Contact Us</button></div>
@@ -811,8 +880,8 @@ a:hover { color: white; }
 <h3 style="text-align:center;margin-bottom:15px;">HEAD OFFICE</h3>
 <p style="text-align:center;">26-C Suraj Nagar Colony, Ujjain Pin - 456001</p>
 <h3 style="text-align:center;margin:15px 0;">Connect With Us</h3>
-<p style="text-align:center;"><a href="tel:+919301450258">+91-9301450258</a><br><a href="mailto:investmentkiduniya111@gmail.com">investmentkiduniya111@gmail.com</a></p>
-<div style="text-align:center;margin-top:20px;"><p><b>Jai Kumar Dhariwal</b><br>AMFI Registered Mutual Fund Distributor<br>ARN-352165</p></div>
+<p style="text-align:center;"><a href="tel:+919301450258">+91-9301450258</a><br /><a href="mailto:investmentkiduniya111@gmail.com">investmentkiduniya111@gmail.com</a></p>
+<div style="text-align:center;margin-top:20px;"><p><b>Jai Kumar Dhariwal</b><br />AMFI Registered Mutual Fund Distributor<br />ARN-352165</p></div>
 </div>
 <div class="disclaimer">Disclaimer: Mutual funds and securities investments are subject to market risks. Past performance does not indicate future performance of the schemes of the fund. Please read offer documents carefully before investing.</div>
 <div class="footer-btn"><button class="btn" onclick="window.open('https://prudentcorporate.com/BusinessCard/UserDetails/37343333')">📞 Contact Us</button></div>
@@ -833,8 +902,8 @@ a:hover { color: white; }
 <h3 style="text-align:center;margin-bottom:15px;">HEAD OFFICE</h3>
 <p style="text-align:center;">26-C Suraj Nagar Colony, Ujjain Pin - 456001</p>
 <h3 style="text-align:center;margin:15px 0;">Connect With Us</h3>
-<p style="text-align:center;"><a href="tel:+919301450258">+91-9301450258</a><br><a href="mailto:investmentkiduniya111@gmail.com">investmentkiduniya111@gmail.com</a></p>
-<div style="text-align:center;margin-top:20px;"><p><b>Jai Kumar Dhariwal</b><br>AMFI Registered Mutual Fund Distributor<br>ARN-352165</p></div>
+<p style="text-align:center;"><a href="tel:+919301450258">+91-9301450258</a><br /><a href="mailto:investmentkiduniya111@gmail.com">investmentkiduniya111@gmail.com</a></p>
+<div style="text-align:center;margin-top:20px;"><p><b>Jai Kumar Dhariwal</b><br />AMFI Registered Mutual Fund Distributor<br />ARN-352165</p></div>
 </div>
 <div class="disclaimer">Disclaimer: Mutual funds and securities investments are subject to market risks. Past performance does not indicate future performance of the schemes of the fund. Please read offer documents carefully before investing.</div>
 <div class="footer-btn"><button class="btn" onclick="window.open('https://prudentcorporate.com/BusinessCard/UserDetails/37343333')">📞 Contact Us</button></div>
@@ -862,8 +931,8 @@ a:hover { color: white; }
 <h3 style="text-align:center;margin-bottom:15px;">HEAD OFFICE</h3>
 <p style="text-align:center;">26-C Suraj Nagar Colony, Ujjain Pin - 456001</p>
 <h3 style="text-align:center;margin:15px 0;">Connect With Us</h3>
-<p style="text-align:center;"><a href="tel:+919301450258">+91-9301450258</a><br><a href="mailto:investmentkiduniya111@gmail.com">investmentkiduniya111@gmail.com</a></p>
-<div style="text-align:center;margin-top:20px;"><p><b>Jai Kumar Dhariwal</b><br>AMFI Registered Mutual Fund Distributor<br>ARN-352165</p></div>
+<p style="text-align:center;"><a href="tel:+919301450258">+91-9301450258</a><br /><a href="mailto:investmentkiduniya111@gmail.com">investmentkiduniya111@gmail.com</a></p>
+<div style="text-align:center;margin-top:20px;"><p><b>Jai Kumar Dhariwal</b><br />AMFI Registered Mutual Fund Distributor<br />ARN-352165</p></div>
 </div>
 <div class="disclaimer">Disclaimer: Mutual funds and securities investments are subject to market risks. Past performance does not indicate future performance of the schemes of the fund. Please read offer documents carefully before investing.</div>
 <div class="footer-btn"><button class="btn" onclick="window.open('https://prudentcorporate.com/BusinessCard/UserDetails/37343333')">📞 Contact Us</button></div>
@@ -878,14 +947,14 @@ a:hover { color: white; }
             <div class="popup-label">📊 Selected Fund</div>
             <div class="popup-value" id="popupFundName">-</div>
             <label style="color:#00c896;font-size:12px;display:block;margin:10px 0 5px 0;font-family:Georgia,serif;">📧 YOUR EMAIL</label>
-            <input type="email" id="popupUserEmail" placeholder="Enter your email to receive fund details" style="width:100%;padding:12px;border:2px solid rgba(0,200,150,0.3);border-radius:8px;margin-bottom:10px;box-sizing:border-box;background:rgba(255,255,255,0.1);color:white;">
+            <input type="email" id="popupUserEmail" placeholder="Enter your email to receive fund details" style="width:100%;padding:12px;border:2px solid rgba(0,200,150,0.3);border-radius:8px;margin-bottom:10px;box-sizing:border-box;background:rgba(255,255,255,0.1);color:white;" />
         </div>
         <div class="popup-email-note">✅ Fund details will be sent to your email instantly</div>
         <div class="popup-steps">
-            <b>📌 Steps to Invest:</b><br>
-            1. FundzBazar will open<br>
-            2. Press <b>Ctrl+V</b> in the email box<br>
-            3. Enter password &amp; Login<br>
+            <b>📌 Steps to Invest:</b><br />
+            1. FundzBazar will open<br />
+            2. Press <b>Ctrl+V</b> in the email box<br />
+            3. Enter password &amp; Login<br />
             4. Type fund name in search
         </div>
         <div class="popup-btn-group">
@@ -893,7 +962,10 @@ a:hover { color: white; }
             <button class="popup-btn popup-btn-close" onclick="closePopup()">Close</button>
         </div>
     </div>
-</div><script>
+</div>
+
+<script>
+//<![CDATA[
 let selected = "";
 let historyStack = ["intro"];
 let currentPage = "intro";
@@ -1099,10 +1171,10 @@ function calculateRisk(){
     else if(score >= 4){ riskLevel = "🟡 Moderate Investor"; pos = "50%"; desc = "Balanced approach with mix of equity and debt. Diversification is key."; riskType = "moderate"; }
     else { riskLevel = "🟢 Conservative Investor"; pos = "15%"; desc = "Capital protection is priority. Stick to stable, low-volatility options."; riskType = "conservative"; }
     const fundMap = {
-        "18-30": { "conservative": "• Large Cap Funds<br>• Index Funds<br>• Debt Funds<br>• Liquid Funds", "moderate": "• Flexi Cap Funds<br>• Large & Mid Cap Funds<br>• Multi Cap Funds<br>• Focused Funds", "aggressive": "• Small Cap Funds<br>• Mid Cap Funds<br>• Sectoral Funds<br>• Thematic Funds<br>• Contra Funds" },
-        "31-45": { "conservative": "• Large Cap Funds<br>• Balanced Adv.<br>• Debt Funds<br>• Index Funds", "moderate": "• Flexi Cap Funds<br>• Large & Mid Cap Funds<br>• Focused Funds<br>• Value Funds", "aggressive": "• Mid Cap Funds<br>• Small Cap Funds<br>• Contra Funds<br>• Thematic Funds" },
-        "46-60": { "conservative": "• Large Cap Funds<br>• Debt Funds<br>• Liquid Funds<br>• Index Funds<br>• Dividend Yield", "moderate": "• Balanced Adv.<br>• Large & Mid Cap Funds<br>• Dividend Yield<br>• Multi Cap", "aggressive": "• Flexi Cap Funds<br>• Multi Cap Funds<br>• Value Funds<br>• Large & Mid Cap" },
-        "60+": { "conservative": "• Debt Funds<br>• Liquid Funds<br>• Large Cap Funds<br>• SWP Plans<br>• Index Funds", "moderate": "• Balanced Adv.<br>• Dividend Yield<br>• Large Cap Funds<br>• Debt Funds", "aggressive": "• Large & Mid Cap Funds<br>• Flexi Cap Funds<br>• Dividend Yield" }
+        "18-30": { "conservative": "• Large Cap Funds<br />• Index Funds<br />• Debt Funds<br />• Liquid Funds", "moderate": "• Flexi Cap Funds<br />• Large &amp; Mid Cap Funds<br />• Multi Cap Funds<br />• Focused Funds", "aggressive": "• Small Cap Funds<br />• Mid Cap Funds<br />• Sectoral Funds<br />• Thematic Funds<br />• Contra Funds" },
+        "31-45": { "conservative": "• Large Cap Funds<br />• Balanced Adv.<br />• Debt Funds<br />• Index Funds", "moderate": "• Flexi Cap Funds<br />• Large &amp; Mid Cap Funds<br />• Focused Funds<br />• Value Funds", "aggressive": "• Mid Cap Funds<br />• Small Cap Funds<br />• Contra Funds<br />• Thematic Funds" },
+        "46-60": { "conservative": "• Large Cap Funds<br />• Debt Funds<br />• Liquid Funds<br />• Index Funds<br />• Dividend Yield", "moderate": "• Balanced Adv.<br />• Large &amp; Mid Cap Funds<br />• Dividend Yield<br />• Multi Cap", "aggressive": "• Flexi Cap Funds<br />• Multi Cap Funds<br />• Value Funds<br />• Large &amp; Mid Cap" },
+        "60+": { "conservative": "• Debt Funds<br />• Liquid Funds<br />• Large Cap Funds<br />• SWP Plans<br />• Index Funds", "moderate": "• Balanced Adv.<br />• Dividend Yield<br />• Large Cap Funds<br />• Debt Funds", "aggressive": "• Large &amp; Mid Cap Funds<br />• Flexi Cap Funds<br />• Dividend Yield" }
     };
     fundsList = fundMap[age][riskType];
     document.getElementById('riskBar').style.display = 'block';
@@ -1110,7 +1182,7 @@ function calculateRisk(){
     document.getElementById('riskPointer').style.left = pos;
     document.getElementById('riskTitle').innerText = riskLevel;
     document.getElementById('riskDesc').innerText = desc;
-    document.getElementById('recommendedFunds').innerHTML = "<b>🎂 Age Group:</b> " + age + "<br><b>⚖️ Risk Type:</b> " + riskLevel + "<br><b>📊 Best Funds:</b><br>" + fundsList;
+    document.getElementById('recommendedFunds').innerHTML = "<b>🎂 Age Group:</b> " + age + "<br /><b>⚖️ Risk Type:</b> " + riskLevel + "<br /><b>📊 Best Funds:</b><br />" + fundsList;
     document.getElementById('riskResult').style.display = 'block';
 }
 
@@ -1135,6 +1207,7 @@ function toggleFAQ(el){
     }
 }
 function openContactForm(){ window.open('https://prudentcorporate.com/BusinessCard/UserDetails/37343333', '_blank'); }
+//]]>
 </script>
 
 </body>
